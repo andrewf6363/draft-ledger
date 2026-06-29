@@ -206,6 +206,8 @@ def main():
         op = open_by_sym.get(sym)
         lp = latest_by_sym.get(sym)
         tp = pt.get(sym, {})
+        series = (longh.get("tickers", {}).get(sym, {}) or {}).get("series", [])
+        yr = [x["c"] for x in series[-252:]]   # ~1 trading year, for a 52-wk range fallback
         tick_detail[sym] = {
             "name": tickers.get(sym, {}).get("name", sym),
             "sector": tickers.get(sym, {}).get("sector", ""),
@@ -213,10 +215,11 @@ def main():
             "day_change_pct": tp.get("day_change_pct"),
             "baseline": rnd(op, 4) if op is not None else None,
             "return_pct": rnd(lib.pct_return(lp, op)),
-            "week52_high": tp.get("week52_high"), "week52_low": tp.get("week52_low"),
+            "week52_high": tp.get("week52_high") or (round(max(yr), 4) if yr else None),
+            "week52_low": tp.get("week52_low") or (round(min(yr), 4) if yr else None),
             "day_high": tp.get("day_high"), "day_low": tp.get("day_low"),
             "volume": tp.get("volume"),
-            "history": (longh.get("tickers", {}).get(sym, {}) or {}).get("series", []),
+            "history": series,
             "news": (news.get("tickers", {}).get(sym, {}) or {}).get("items", []),
         }
 

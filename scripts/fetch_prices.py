@@ -50,21 +50,25 @@ def _http_json(url, timeout=20):
 
 
 def fetch_yahoo(sym):
-    """Yahoo v8 chart -> normalized {bars, meta, source} or None. Retries hosts/backs off on 429."""
-    for attempt, host in enumerate(["1", "2", "1"]):
+    """Yahoo v8 chart -> normalized {bars, meta, source} or None.
+
+    Tries both hosts but fails FAST (no long backoff): datacenter IPs like GitHub's
+    runners are reliably 429'd here, so we'd rather hand off to yfinance quickly than
+    burn minutes sleeping. Yahoo-direct still wins from un-throttled IPs (e.g. local).
+    """
+    for host in ["1", "2"]:
         try:
-            data = _http_json(CHART.format(h=host, sym=sym))
+            data = _http_json(CHART.format(h=host, sym=sym), timeout=12)
             res = (data.get("chart") or {}).get("result")
             if not res:
                 return None
             return parse_yahoo(res[0])
         except urllib.error.HTTPError as e:
             if e.code in (429, 502, 503):
-                time.sleep([2, 5, 12][min(attempt, 2)])
-                continue
+                continue        # throttled on this host — try the other, then yield to yfinance
             return None
         except (urllib.error.URLError, TimeoutError, ssl.SSLError, ValueError, OSError):
-            time.sleep(2)
+            continue
     return None
 
 
