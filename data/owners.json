@@ -1,0 +1,8 @@
+{
+  "owners": [
+    { "name": "Kyle Williams", "picks": ["GEV", "VRT", "CEG"] },
+    { "name": "John Atkins",   "picks": ["RKLB", "OKLO", "HOOD"] },
+    { "name": "Keegan Ball",   "picks": ["NNE", "OKLO", "LUNR"] },
+    { "name": "Andrew Fahey",  "picks": ["MU", "STX", "SNDK"] }
+  ]
+}

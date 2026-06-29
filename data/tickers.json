@@ -1,0 +1,13 @@
+{
+  "GEV":  { "name": "GE Vernova",         "sector": "Power & Electrification" },
+  "VRT":  { "name": "Vertiv Holdings",    "sector": "Data-Center Infrastructure" },
+  "CEG":  { "name": "Constellation Energy", "sector": "Nuclear Utilities" },
+  "RKLB": { "name": "Rocket Lab",         "sector": "Space & Aerospace" },
+  "OKLO": { "name": "Oklo",               "sector": "Nuclear Energy" },
+  "HOOD": { "name": "Robinhood Markets",  "sector": "Fintech" },
+  "NNE":  { "name": "Nano Nuclear Energy", "sector": "Nuclear Energy" },
+  "LUNR": { "name": "Intuitive Machines", "sector": "Space & Aerospace" },
+  "MU":   { "name": "Micron Technology",  "sector": "Semiconductors" },
+  "STX":  { "name": "Seagate Technology", "sector": "Data Storage" },
+  "SNDK": { "name": "Sandisk",            "sector": "Data Storage" }
+}

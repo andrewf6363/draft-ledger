@@ -1,0 +1,182 @@
+{
+  "generated_utc": "2026-06-29T20:21:08Z",
+  "state": "pre",
+  "standings": [
+    {
+      "name": "Kyle Williams",
+      "rank": null,
+      "avg": null,
+      "points_behind": null,
+      "movement": 0,
+      "is_new": false,
+      "pending": true,
+      "picks": [
+        {
+          "sym": "GEV",
+          "name": "GE Vernova",
+          "sector": "Power & Electrification",
+          "pct": null,
+          "contribution": null,
+          "price": null,
+          "day_change_pct": null,
+          "baseline": null,
+          "spark": null
+        },
+        {
+          "sym": "VRT",
+          "name": "Vertiv Holdings",
+          "sector": "Data-Center Infrastructure",
+          "pct": null,
+          "contribution": null,
+          "price": null,
+          "day_change_pct": null,
+          "baseline": null,
+          "spark": null
+        },
+        {
+          "sym": "CEG",
+          "name": "Constellation Energy",
+          "sector": "Nuclear Utilities",
+          "pct": null,
+          "contribution": null,
+          "price": null,
+          "day_change_pct": null,
+          "baseline": null,
+          "spark": null
+        }
+      ]
+    },
+    {
+      "name": "John Atkins",
+      "rank": null,
+      "avg": null,
+      "points_behind": null,
+      "movement": 0,
+      "is_new": false,
+      "pending": true,
+      "picks": [
+        {
+          "sym": "RKLB",
+          "name": "Rocket Lab",
+          "sector": "Space & Aerospace",
+          "pct": null,
+          "contribution": null,
+          "price": null,
+          "day_change_pct": null,
+          "baseline": null,
+          "spark": null
+        },
+        {
+          "sym": "OKLO",
+          "name": "Oklo",
+          "sector": "Nuclear Energy",
+          "pct": null,
+          "contribution": null,
+          "price": null,
+          "day_change_pct": null,
+          "baseline": null,
+          "spark": null
+        },
+        {
+          "sym": "HOOD",
+          "name": "Robinhood Markets",
+          "sector": "Fintech",
+          "pct": null,
+          "contribution": null,
+          "price": null,
+          "day_change_pct": null,
+          "baseline": null,
+          "spark": null
+        }
+      ]
+    },
+    {
+      "name": "Keegan Ball",
+      "rank": null,
+      "avg": null,
+      "points_behind": null,
+      "movement": 0,
+      "is_new": false,
+      "pending": true,
+      "picks": [
+        {
+          "sym": "NNE",
+          "name": "Nano Nuclear Energy",
+          "sector": "Nuclear Energy",
+          "pct": null,
+          "contribution": null,
+          "price": null,
+          "day_change_pct": null,
+          "baseline": null,
+          "spark": null
+        },
+        {
+          "sym": "OKLO",
+          "name": "Oklo",
+          "sector": "Nuclear Energy",
+          "pct": null,
+          "contribution": null,
+          "price": null,
+          "day_change_pct": null,
+          "baseline": null,
+          "spark": null
+        },
+        {
+          "sym": "LUNR",
+          "name": "Intuitive Machines",
+          "sector": "Space & Aerospace",
+          "pct": null,
+          "contribution": null,
+          "price": null,
+          "day_change_pct": null,
+          "baseline": null,
+          "spark": null
+        }
+      ]
+    },
+    {
+      "name": "Andrew Fahey",
+      "rank": null,
+      "avg": null,
+      "points_behind": null,
+      "movement": 0,
+      "is_new": false,
+      "pending": true,
+      "picks": [
+        {
+          "sym": "MU",
+          "name": "Micron Technology",
+          "sector": "Semiconductors",
+          "pct": null,
+          "contribution": null,
+          "price": null,
+          "day_change_pct": null,
+          "baseline": null,
+          "spark": null
+        },
+        {
+          "sym": "STX",
+          "name": "Seagate Technology",
+          "sector": "Data Storage",
+          "pct": null,
+          "contribution": null,
+          "price": null,
+          "day_change_pct": null,
+          "baseline": null,
+          "spark": null
+        },
+        {
+          "sym": "SNDK",
+          "name": "Sandisk",
+          "sector": "Data Storage",
+          "pct": null,
+          "contribution": null,
+          "price": null,
+          "day_change_pct": null,
+          "baseline": null,
+          "spark": null
+        }
+      ]
+    }
+  ]
+}

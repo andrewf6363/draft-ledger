@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Draft Ledger</title>
+<meta name="description" content="Fantasy league draft-order stock challenge — highest average return picks first.">
+<meta property="og:title" content="The Draft Ledger">
+<meta property="og:description" content="Draft-order stock challenge · July 2026">
+<meta property="og:image" content="assets/og.png">
+<meta name="theme-color" content="#184D34">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='5' fill='%23184D34'/%3E%3Cpath d='M8 22V10M8 22h7M16 10h3a5 5 0 0 1 0 10h-3V10z' fill='none' stroke='%23A8812E' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F6EFDF;--paper2:#FCF7EB;--paper3:#EFE3CE;--card:#FBF5E8;
+  --ink:#21221B;--soft:#595644;--mut:#8A836C;
+  --rule:#E3D7BE;--rule2:#CDBE9C;
+  --gain:#2E6A43;--gain-soft:#E7EEE2;--loss:#A2402C;--loss-soft:#F2E3DB;
+  --gold:#A8812E;--gold-d:#856621;
+  --band:#184D34;--band2:#123B28;--band-ink:#F4EFDF;--band-rule:#3E6E52;--kicker:#CFE0CF;
+  --disp:"Familjen Grotesk",system-ui,sans-serif;--mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--disp);line-height:1.45;
+  background-image:radial-gradient(transparent 0,transparent),linear-gradient(180deg,#F8F1E3,#F4ECDB 60%,#F1E7D2);
+  background-attachment:fixed;
+}
+.wrap{max-width:920px;margin:0 auto;padding:0 18px 60px}
+.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.up{color:var(--gain)}.dn{color:var(--loss)}.muted{color:var(--mut)}
+a{color:var(--gold-d)}
+button{font-family:inherit}
+
+/* masthead */
+.kicker{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--soft);font-weight:600;padding:16px 2px 0}
+.mast{background:var(--band);background-image:linear-gradient(180deg,var(--band),var(--band2));border-radius:4px;margin-top:8px;padding:14px 20px 12px;box-shadow:0 1px 0 var(--rule2)}
+.mast h1{font-family:var(--disp);font-weight:700;font-size:clamp(38px,8vw,68px);line-height:.98;letter-spacing:-.02em;text-align:center;color:var(--band-ink);margin:2px 0;border-top:2px solid var(--band-rule);border-bottom:1px solid var(--band-rule);padding:8px 0}
+.mast .sub{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;font-size:12px;color:var(--kicker);padding-top:6px}
+.mast .sub .it{font-style:italic;font-family:var(--disp)}
+.dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#7FB996;margin-right:6px;vertical-align:middle}
+.dot.closed{background:#C7A86B}
+.dateline{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap;border-bottom:3px double var(--rule2);padding:8px 2px 9px;font-size:12px;color:var(--soft)}
+
+/* ticker tape */
+.tape{margin:12px -18px;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);background:var(--paper3);overflow:hidden;white-space:nowrap}
+.tape-row{display:inline-flex;gap:42px;padding:8px 21px;animation:tape 60s linear infinite;will-change:transform}
+.tape:hover .tape-row{animation-play-state:paused}
+.tape b{font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.03em}
+.tape b span{font-weight:500;margin-left:7px}
+@keyframes tape{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* section heading */
+.sec{display:flex;align-items:center;gap:12px;font-size:11.5px;letter-spacing:.17em;text-transform:uppercase;color:var(--soft);font-weight:700;margin:30px 0 13px}
+.sec::after{content:"";flex:1;height:1px;background:var(--rule2)}
+.sec .hint{letter-spacing:.02em;text-transform:none;font-weight:500;color:var(--mut);font-size:11px}
+
+/* draft board */
+.board{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
+.seat{display:flex;align-items:center;gap:10px;border:1px solid var(--rule);border-radius:8px;background:var(--card);padding:9px 11px}
+.seat .pk{font-family:var(--mono);font-size:11px;font-weight:600;color:var(--mut);width:34px}
+.seat.first{border-color:var(--gold);background:linear-gradient(0deg,#FBF2DC,#FBF2DC)}
+.seat.first .pk{color:var(--gold-d)}
+.seat .who{font-weight:600;font-size:13.5px;line-height:1.15;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.seat .ret{margin-left:auto;font-family:var(--mono);font-size:13px;font-weight:600}
+
+/* race chart */
+.race{border:1px solid var(--rule);border-radius:10px;background:var(--card);padding:14px 14px 8px}
+.race svg{width:100%;height:auto;display:block}
+.legend{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:8px;font-size:11.5px;color:var(--soft)}
+.legend span{display:inline-flex;align-items:center;gap:5px}
+.legend i{width:11px;height:3px;border-radius:2px;display:inline-block}
+
+/* standings */
+.owner{border:1px solid var(--rule);border-radius:11px;background:var(--paper2);padding:13px 15px 14px;margin-bottom:11px}
+.owner.lead{border-color:var(--gold);box-shadow:inset 3px 0 0 var(--gold)}
+.ohead{display:flex;align-items:center;gap:12px;margin-bottom:11px}
+.rank{font-family:var(--disp);font-weight:700;font-size:30px;line-height:1;width:34px;text-align:center;color:var(--rule2)}
+.owner.lead .rank{color:var(--gold)}
+.oname{font-size:16.5px;font-weight:600;letter-spacing:-.01em}
+.otag{font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-d);font-weight:700;margin-top:2px}
+.mv{font-size:11px;font-weight:600;margin-left:6px}
+.oright{margin-left:auto;text-align:right}
+.oavg{font-family:var(--mono);font-size:23px;font-weight:600;letter-spacing:-.02em;line-height:1}
+.obehind{font-size:10px;letter-spacing:.04em;color:var(--mut);margin-top:3px}
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;border-top:1px solid var(--rule);padding-top:11px}
+.tile{border:1px solid var(--rule);border-radius:8px;background:var(--card);padding:9px 10px 10px;cursor:pointer;transition:border-color .12s,transform .12s,box-shadow .12s;min-width:0}
+.tile:hover{border-color:var(--rule2);transform:translateY(-1px);box-shadow:0 3px 10px rgba(60,45,15,.07)}
+.tile:focus-visible{outline:2px solid var(--gold);outline-offset:1px}
+.tl-top{display:flex;justify-content:space-between;align-items:baseline;gap:6px}
+.tl-sym{font-family:var(--mono);font-size:13px;font-weight:600;letter-spacing:.02em}
+.tl-pct{font-family:var(--mono);font-size:13px;font-weight:600}
+.tl-co{font-size:9.5px;color:var(--mut);margin:2px 0 4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.spk{width:100%;height:22px;display:block;overflow:visible;margin-bottom:2px}
+.spk polyline{fill:none;stroke-width:1.5;vector-effect:non-scaling-stroke;stroke-linecap:round;stroke-linejoin:round}
+.mini{display:grid;grid-template-columns:1fr 1fr;gap:3px 10px;margin-top:7px;border-top:1px solid var(--rule);padding-top:7px}
+.mini > div{display:flex;justify-content:space-between;gap:6px;min-width:0}
+.ml{font-size:8.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--mut);font-weight:600;white-space:nowrap}
+.mvv{font-family:var(--mono);font-size:10.5px;font-weight:600;white-space:nowrap}
+.tl-more{font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-d);font-weight:600;margin-top:6px;display:flex;align-items:center;gap:4px;opacity:.8}
+
+/* movers + sectors */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+.mcard{border:1px solid var(--rule);border-radius:10px;background:var(--paper2);padding:12px 14px}
+.mcard .lab{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--mut);font-weight:700}
+.mcard .big{font-family:var(--mono);font-size:21px;font-weight:600;margin-top:3px}
+.mcard .who{font-size:11.5px;color:var(--soft);margin-top:2px}
+.sectors{border:1px solid var(--rule);border-radius:10px;background:var(--paper2);padding:6px 14px}
+.srow{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--rule)}
+.srow:last-child{border-bottom:0}
+.srow .sn{font-size:13px;font-weight:500;width:42%}
+.bar{flex:1;height:7px;border-radius:4px;background:var(--paper3);overflow:hidden}
+.bar i{display:block;height:100%;background:var(--band);border-radius:4px}
+.srow .sc{font-family:var(--mono);font-size:11.5px;color:var(--soft);width:54px;text-align:right}
+
+/* roster (pre) */
+.count{display:flex;align-items:baseline;gap:8px;justify-content:center;background:var(--band);background-image:linear-gradient(180deg,var(--band),var(--band2));color:var(--band-ink);border-radius:10px;padding:18px;margin:4px 0 6px;flex-wrap:wrap}
+.count .cd{font-family:var(--mono);font-size:clamp(26px,7vw,40px);font-weight:600;letter-spacing:-.01em}
+.count .cl{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--kicker)}
+.rost{display:grid;grid-template-columns:repeat(auto-fill,minmax(248px,1fr));gap:11px}
+.rcard{border:1px solid var(--rule);border-radius:10px;background:var(--paper2);padding:12px 14px}
+.rcard .rn{font-size:15px;font-weight:600;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.rcard .rn b{font-family:var(--mono);font-size:11px;font-weight:600;color:var(--mut)}
+.rpick{display:flex;align-items:baseline;gap:8px;padding:5px 0;border-top:1px solid var(--rule)}
+.rpick .rs{font-family:var(--mono);font-weight:600;font-size:12.5px;width:52px}
+.rpick .rc{font-size:11.5px;color:var(--soft);min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.rpick .rsec{margin-left:auto;font-size:10px;color:var(--mut);white-space:nowrap}
+
+/* footer */
+.foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;border-top:3px double var(--rule2);margin-top:34px;padding-top:12px;font-size:11px;color:var(--mut)}
+
+/* drawer */
+.scrim{position:fixed;inset:0;background:rgba(28,22,8,.42);opacity:0;pointer-events:none;transition:opacity .2s;z-index:40}
+.scrim.on{opacity:1;pointer-events:auto}
+.drawer{position:fixed;top:0;right:0;height:100%;width:min(500px,94vw);background:var(--paper);border-left:1px solid var(--rule2);box-shadow:-12px 0 40px rgba(40,30,10,.18);transform:translateX(100%);transition:transform .24s cubic-bezier(.4,0,.2,1);z-index:41;overflow-y:auto;-webkit-overflow-scrolling:touch}
+.drawer.on{transform:translateX(0)}
+.dh{background:var(--band);background-image:linear-gradient(180deg,var(--band),var(--band2));color:var(--band-ink);padding:16px 18px 14px;position:sticky;top:0;z-index:2}
+.dh .x{position:absolute;top:12px;right:14px;background:transparent;border:1px solid var(--band-rule);color:var(--band-ink);border-radius:6px;width:30px;height:30px;font-size:16px;cursor:pointer;line-height:1}
+.dh .dsym{font-family:var(--mono);font-size:22px;font-weight:600;letter-spacing:.02em}
+.dh .dco{font-size:12px;color:var(--kicker);margin-top:1px}
+.dh .dpr{display:flex;align-items:baseline;gap:10px;margin-top:9px}
+.dh .dprice{font-family:var(--mono);font-size:26px;font-weight:600}
+.dh .dchg{font-family:var(--mono);font-size:13px;font-weight:600}
+.dbody{padding:14px 18px 30px}
+.tf{display:flex;gap:5px;margin-bottom:10px}
+.tf button{flex:1;border:1px solid var(--rule2);background:var(--paper2);color:var(--soft);border-radius:6px;padding:6px 0;font-size:11.5px;font-weight:600;cursor:pointer;font-family:var(--mono);letter-spacing:.02em}
+.tf button.on{background:var(--band);color:var(--band-ink);border-color:var(--band)}
+.chart{border:1px solid var(--rule);border-radius:9px;background:var(--card);padding:10px}
+.chart svg{width:100%;height:auto;display:block}
+.dstats{display:grid;grid-template-columns:1fr 1fr;gap:8px 14px;margin:14px 0 4px}
+.dstat{display:flex;justify-content:space-between;gap:8px;border-bottom:1px solid var(--rule);padding:7px 0}
+.dstat .k{font-size:11px;color:var(--mut);text-transform:uppercase;letter-spacing:.05em}
+.dstat .v{font-family:var(--mono);font-size:12.5px;font-weight:600}
+.dnews{margin-top:16px}
+.dnews .nh{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--soft);font-weight:700;margin-bottom:8px}
+.nitem{display:block;border-top:1px solid var(--rule);padding:9px 0;color:var(--ink);text-decoration:none;font-size:13px;line-height:1.35}
+.nitem:hover{color:var(--gold-d)}
+.nitem .nd{font-size:10.5px;color:var(--mut);margin-top:2px}
+.empty{color:var(--mut);font-size:12.5px;font-style:italic;padding:6px 0}
+
+@media(max-width:620px){
+  .tiles{grid-template-columns:1fr}
+  .cols{grid-template-columns:1fr}
+  .mini{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="kicker" id="kicker"></div>
+  <header class="mast" id="mast"></header>
+  <div class="tape" id="tape"><div class="tape-row" id="tape-row"></div></div>
+  <main id="app"></main>
+  <footer class="foot" id="foot"></footer>
+</div>
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-hidden="true" aria-label="Stock detail"></aside>
+<noscript><p style="padding:20px;font-family:sans-serif">This dashboard needs JavaScript enabled.</p></noscript>
+<script>
+const DATA = {"meta": {"title": "The Draft Ledger", "subtitle": "Draft-Order Stock Challenge", "edition": "July 2026", "commissioner": "K. T. Williams", "prize_line": "Highest average return picks first.", "state": "pre", "generated_utc": "2026-06-29T20:21:08Z", "start_utc": "2026-07-01T13:30:00Z", "end_utc": "2026-07-31T20:00:00Z", "open_label": "9:30am ET, Jul 1", "close_label": "4:00pm ET, Jul 31", "market_status": "After hours", "market_open": false, "baseline_count": 0, "picked_count": 11, "owner_count": 4, "days_left": 22}, "roster": [{"name": "Kyle Williams", "picks": [{"sym": "GEV", "name": "GE Vernova", "sector": "Power & Electrification"}, {"sym": "VRT", "name": "Vertiv Holdings", "sector": "Data-Center Infrastructure"}, {"sym": "CEG", "name": "Constellation Energy", "sector": "Nuclear Utilities"}]}, {"name": "John Atkins", "picks": [{"sym": "RKLB", "name": "Rocket Lab", "sector": "Space & Aerospace"}, {"sym": "OKLO", "name": "Oklo", "sector": "Nuclear Energy"}, {"sym": "HOOD", "name": "Robinhood Markets", "sector": "Fintech"}]}, {"name": "Keegan Ball", "picks": [{"sym": "NNE", "name": "Nano Nuclear Energy", "sector": "Nuclear Energy"}, {"sym": "OKLO", "name": "Oklo", "sector": "Nuclear Energy"}, {"sym": "LUNR", "name": "Intuitive Machines", "sector": "Space & Aerospace"}]}, {"name": "Andrew Fahey", "picks": [{"sym": "MU", "name": "Micron Technology", "sector": "Semiconductors"}, {"sym": "STX", "name": "Seagate Technology", "sector": "Data Storage"}, {"sym": "SNDK", "name": "Sandisk", "sector": "Data Storage"}]}], "standings": [{"name": "Kyle Williams", "rank": null, "avg": null, "points_behind": null, "movement": 0, "is_new": false, "pending": true, "picks": [{"sym": "GEV", "name": "GE Vernova", "sector": "Power & Electrification", "pct": null, "contribution": null, "price": null, "day_change_pct": null, "baseline": null, "spark": null}, {"sym": "VRT", "name": "Vertiv Holdings", "sector": "Data-Center Infrastructure", "pct": null, "contribution": null, "price": null, "day_change_pct": null, "baseline": null, "spark": null}, {"sym": "CEG", "name": "Constellation Energy", "sector": "Nuclear Utilities", "pct": null, "contribution": null, "price": null, "day_change_pct": null, "baseline": null, "spark": null}]}, {"name": "John Atkins", "rank": null, "avg": null, "points_behind": null, "movement": 0, "is_new": false, "pending": true, "picks": [{"sym": "RKLB", "name": "Rocket Lab", "sector": "Space & Aerospace", "pct": null, "contribution": null, "price": null, "day_change_pct": null, "baseline": null, "spark": null}, {"sym": "OKLO", "name": "Oklo", "sector": "Nuclear Energy", "pct": null, "contribution": null, "price": null, "day_change_pct": null, "baseline": null, "spark": null}, {"sym": "HOOD", "name": "Robinhood Markets", "sector": "Fintech", "pct": null, "contribution": null, "price": null, "day_change_pct": null, "baseline": null, "spark": null}]}, {"name": "Keegan Ball", "rank": null, "avg": null, "points_behind": null, "movement": 0, "is_new": false, "pending": true, "picks": [{"sym": "NNE", "name": "Nano Nuclear Energy", "sector": "Nuclear Energy", "pct": null, "contribution": null, "price": null, "day_change_pct": null, "baseline": null, "spark": null}, {"sym": "OKLO", "name": "Oklo", "sector": "Nuclear Energy", "pct": null, "contribution": null, "price": null, "day_change_pct": null, "baseline": null, "spark": null}, {"sym": "LUNR", "name": "Intuitive Machines", "sector": "Space & Aerospace", "pct": null, "contribution": null, "price": null, "day_change_pct": null, "baseline": null, "spark": null}]}, {"name": "Andrew Fahey", "rank": null, "avg": null, "points_behind": null, "movement": 0, "is_new": false, "pending": true, "picks": [{"sym": "MU", "name": "Micron Technology", "sector": "Semiconductors", "pct": null, "contribution": null, "price": null, "day_change_pct": null, "baseline": null, "spark": null}, {"sym": "STX", "name": "Seagate Technology", "sector": "Data Storage", "pct": null, "contribution": null, "price": null, "day_change_pct": null, "baseline": null, "spark": null}, {"sym": "SNDK", "name": "Sandisk", "sector": "Data Storage", "pct": null, "contribution": null, "price": null, "day_change_pct": null, "baseline": null, "spark": null}]}], "draft_order": [], "movers": null, "sectors": [{"sector": "Nuclear Energy", "count": 3, "pct": 25}, {"sector": "Space & Aerospace", "count": 2, "pct": 17}, {"sector": "Data Storage", "count": 2, "pct": 17}, {"sector": "Power & Electrification", "count": 1, "pct": 8}, {"sector": "Data-Center Infrastructure", "count": 1, "pct": 8}, {"sector": "Nuclear Utilities", "count": 1, "pct": 8}, {"sector": "Fintech", "count": 1, "pct": 8}, {"sector": "Semiconductors", "count": 1, "pct": 8}], "race": {"dates": [], "series": [{"name": "Kyle Williams", "points": []}, {"name": "John Atkins", "points": []}, {"name": "Keegan Ball", "points": []}, {"name": "Andrew Fahey", "points": []}]}, "tickers": {"GEV": {"name": "GE Vernova", "sector": "Power & Electrification", "price": null, "day_change_pct": null, "baseline": null, "return_pct": null, "week52_high": null, "week52_low": null, "day_high": null, "day_low": null, "volume": null, "history": [], "news": []}, "VRT": {"name": "Vertiv Holdings", "sector": "Data-Center Infrastructure", "price": null, "day_change_pct": null, "baseline": null, "return_pct": null, "week52_high": null, "week52_low": null, "day_high": null, "day_low": null, "volume": null, "history": [], "news": []}, "CEG": {"name": "Constellation Energy", "sector": "Nuclear Utilities", "price": null, "day_change_pct": null, "baseline": null, "return_pct": null, "week52_high": null, "week52_low": null, "day_high": null, "day_low": null, "volume": null, "history": [], "news": []}, "RKLB": {"name": "Rocket Lab", "sector": "Space & Aerospace", "price": null, "day_change_pct": null, "baseline": null, "return_pct": null, "week52_high": null, "week52_low": null, "day_high": null, "day_low": null, "volume": null, "history": [], "news": []}, "OKLO": {"name": "Oklo", "sector": "Nuclear Energy", "price": null, "day_change_pct": null, "baseline": null, "return_pct": null, "week52_high": null, "week52_low": null, "day_high": null, "day_low": null, "volume": null, "history": [], "news": []}, "HOOD": {"name": "Robinhood Markets", "sector": "Fintech", "price": null, "day_change_pct": null, "baseline": null, "return_pct": null, "week52_high": null, "week52_low": null, "day_high": null, "day_low": null, "volume": null, "history": [], "news": []}, "NNE": {"name": "Nano Nuclear Energy", "sector": "Nuclear Energy", "price": null, "day_change_pct": null, "baseline": null, "return_pct": null, "week52_high": null, "week52_low": null, "day_high": null, "day_low": null, "volume": null, "history": [], "news": []}, "LUNR": {"name": "Intuitive Machines", "sector": "Space & Aerospace", "price": null, "day_change_pct": null, "baseline": null, "return_pct": null, "week52_high": null, "week52_low": null, "day_high": null, "day_low": null, "volume": null, "history": [], "news": []}, "MU": {"name": "Micron Technology", "sector": "Semiconductors", "price": null, "day_change_pct": null, "baseline": null, "return_pct": null, "week52_high": null, "week52_low": null, "day_high": null, "day_low": null, "volume": null, "history": [], "news": []}, "STX": {"name": "Seagate Technology", "sector": "Data Storage", "price": null, "day_change_pct": null, "baseline": null, "return_pct": null, "week52_high": null, "week52_low": null, "day_high": null, "day_low": null, "volume": null, "history": [], "news": []}, "SNDK": {"name": "Sandisk", "sector": "Data Storage", "price": null, "day_change_pct": null, "baseline": null, "return_pct": null, "week52_high": null, "week52_low": null, "day_high": null, "day_low": null, "volume": null, "history": [], "news": []}}};
+const D = DATA, M = D.meta;
+
+const fmtPct = (v,sign=true)=> v==null ? "—" : (sign&&v>0?"+":"")+v.toFixed(2)+"%";
+const fmtPct1 = (v)=> v==null ? "—" : (v>0?"+":"")+v.toFixed(1)+"%";
+const usd = (v)=> v==null ? "—" : "$"+Number(v).toLocaleString("en-US",{minimumFractionDigits:2,maximumFractionDigits:2});
+const vol = (v)=> v==null ? "—" : Number(v)>=1e6 ? (v/1e6).toFixed(1)+"M" : Number(v)>=1e3 ? (v/1e3).toFixed(0)+"K" : ""+v;
+const cls = (v)=> v==null ? "" : v>=0 ? "up" : "dn";
+const esc = (s)=> String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const arrow = (m)=> !m ? '<span class="muted mv">–</span>' : m>0 ? `<span class="up mv">▲${m}</span>` : `<span class="dn mv">▼${Math.abs(m)}</span>`;
+
+/* ---------- masthead + tape + footer ---------- */
+function renderKicker(){
+  document.getElementById("kicker").innerHTML =
+    `<span>${esc(M.edition)} · Vol. I</span><span>Commissioner · ${esc(M.commissioner)}</span>`;
+}
+function renderMast(){
+  const open = M.market_open;
+  document.getElementById("mast").innerHTML = `
+    <h1>${esc(M.title)}</h1>
+    <div class="sub">
+      <span><span class="dot ${open?'':'closed'}"></span>${esc(M.market_status)}</span>
+      <span class="it">${esc(M.subtitle)}</span>
+      <span class="mono" id="clock"></span>
+    </div>`;
+}
+function renderTape(){
+  const row = document.getElementById("tape-row");
+  const syms = Object.keys(D.tickers);
+  if(!syms.length){ document.getElementById("tape").style.display="none"; return; }
+  const one = syms.map(s=>{
+    const t = D.tickers[s];
+    const v = t.day_change_pct!=null ? t.day_change_pct : t.return_pct;
+    if(v==null) return `<b>${s}</b>`;
+    const a = v>=0?"▲":"▼";
+    return `<b>${s} <span class="${cls(v)}">${a}${Math.abs(v).toFixed(1)}%</span></b>`;
+  }).join("");
+  row.innerHTML = one + one;
+}
+function renderFooter(){
+  const upd = new Date(M.generated_utc);
+  const when = isNaN(upd) ? M.generated_utc : upd.toLocaleString("en-US",{month:"short",day:"numeric",hour:"numeric",minute:"2-digit"});
+  document.getElementById("foot").innerHTML =
+    `<span>Auto-updates 3× per trading day · open, midday, close</span>
+     <span class="mono">As of ${esc(when)} · prices via Yahoo, ~15-min delayed</span>`;
+}
+
+/* ---------- sparkline ---------- */
+function sparkSVG(sp){
+  if(!sp) return `<svg class="spk" viewBox="0 0 64 20"></svg>`;
+  const c = sp.up ? "var(--gain)" : "var(--loss)";
+  return `<svg class="spk" viewBox="0 0 64 20" preserveAspectRatio="none" aria-hidden="true"><polyline points="${sp.points}" stroke="${c}"/></svg>`;
+}
+
+/* ---------- live board ---------- */
+function renderLive(){
+  let h = "";
+  h += draftBoard();
+  if(D.race.dates.length>=2) h += raceChart();
+  h += `<div class="sec">Standings <span class="hint">· average return across three picks · tap a stock for detail</span></div>`;
+  h += D.standings.map(ownerCard).join("");
+  if(D.movers) h += moversBlock();
+  if(D.sectors.length) h += sectorBlock();
+  document.getElementById("app").innerHTML = h;
+}
+function draftBoard(){
+  const ord = (n)=>["1st","2nd","3rd","4th","5th","6th","7th","8th","9th","10th","11th","12th"][n-1]||(n+"th");
+  const seats = D.draft_order.map(s=>`
+    <div class="seat ${s.rank===1?'first':''}">
+      <span class="pk">${ord(s.rank)}</span>
+      <span class="who">${esc(s.name)}</span>
+      <span class="ret ${cls(s.avg)}">${fmtPct(s.avg)}</span>
+    </div>`).join("");
+  return `<div class="sec">Draft order <span class="hint">· the prize — best average picks first</span></div><div class="board">${seats}</div>`;
+}
+function ownerCard(o){
+  const lead = o.rank===1 ? "lead":"";
+  const tag = o.rank===1 ? `<div class="otag">Front-runner · No. 1 pick</div>`:"";
+  const behind = o.rank===1 ? "leader" : (o.points_behind!=null?`${o.points_behind.toFixed(2)} pts back`:"");
+  const tiles = o.picks.map(p=>tile(p)).join("");
+  const rankTxt = o.rank!=null ? o.rank : "—";
+  return `
+  <article class="owner ${lead}">
+    <div class="ohead">
+      <span class="rank">${rankTxt}</span>
+      <div><div class="oname">${esc(o.name)}${o.rank!=null?arrow(o.movement):""}</div>${tag}</div>
+      <div class="oright"><div class="oavg ${cls(o.avg)}">${fmtPct(o.avg)}</div><div class="obehind">${behind}</div></div>
+    </div>
+    <div class="tiles">${tiles}</div>
+  </article>`;
+}
+function tile(p){
+  return `
+  <div class="tile" tabindex="0" role="button" data-sym="${p.sym}" aria-label="${esc(p.name)} detail">
+    <div class="tl-top"><span class="tl-sym">${p.sym}</span><span class="tl-pct ${cls(p.pct)}">${fmtPct(p.pct)}</span></div>
+    <div class="tl-co">${esc(p.name)} · ${esc(p.sector)}</div>
+    ${sparkSVG(p.spark)}
+    <div class="mini">
+      <div><span class="ml">Now</span><span class="mvv">${usd(p.price)}</span></div>
+      <div><span class="ml">Today</span><span class="mvv ${cls(p.day_change_pct)}">${fmtPct1(p.day_change_pct)}</span></div>
+      <div><span class="ml">Jul 1</span><span class="mvv">${usd(p.baseline)}</span></div>
+      <div><span class="ml">to avg</span><span class="mvv ${cls(p.contribution)}">${p.contribution==null?"—":(p.contribution>0?"+":"")+p.contribution.toFixed(1)}</span></div>
+    </div>
+    <div class="tl-more">View detail →</div>
+  </div>`;
+}
+function moversBlock(){
+  const g=D.movers.gainer, d=D.movers.drag;
+  const who=(o)=>o.owners.length?o.owners.join(", "):"—";
+  return `<div class="sec">Today's movers</div><div class="cols">
+    <div class="mcard"><div class="lab">Biggest gainer</div><div class="big up">${g.sym} ${fmtPct1(g.pct)}</div><div class="who">${esc(g.name)} · ${esc(who(g))}</div></div>
+    <div class="mcard"><div class="lab">Biggest drag</div><div class="big dn">${d.sym} ${fmtPct1(d.pct)}</div><div class="who">${esc(d.name)} · ${esc(who(d))}</div></div>
+  </div>`;
+}
+function sectorBlock(){
+  const max=Math.max(...D.sectors.map(s=>s.count));
+  const rows=D.sectors.map(s=>`
+    <div class="srow"><span class="sn">${esc(s.sector)}</span>
+      <span class="bar"><i style="width:${Math.round(s.count/max*100)}%"></i></span>
+      <span class="sc">${s.count} pick${s.count>1?'s':''} · ${s.pct}%</span></div>`).join("");
+  return `<div class="sec">What the league is betting on</div><div class="sectors">${rows}</div>`;
+}
+
+/* ---------- race chart (multi-line SVG) ---------- */
+function raceChart(){
+  const W=860,H=240,pl=40,pr=14,pt=14,pb=24, dates=D.race.dates;
+  const all=[]; D.race.series.forEach(s=>s.points.forEach(v=>{if(v!=null)all.push(v)}));
+  if(!all.length) return "";
+  let lo=Math.min(0,...all), hi=Math.max(0,...all); if(hi===lo)hi+=1;
+  const n=dates.length;
+  const X=i=> pl + (W-pl-pr)*(n<=1?0.5:i/(n-1));
+  const Y=v=> pt + (H-pt-pb)*(1-(v-lo)/(hi-lo));
+  const palette=["#184D34","#A8812E","#2E6A43","#A2402C","#3E6E52","#6E5418","#4B6A8C","#8C5A3C","#5A7D52","#7A3E5A","#2F5F6E","#946A2A"];
+  let grid="";
+  [hi,(hi+lo)/2,lo].forEach(v=>{const y=Y(v);grid+=`<line x1="${pl}" y1="${y.toFixed(1)}" x2="${W-pr}" y2="${y.toFixed(1)}" stroke="var(--rule)"/><text x="6" y="${(y+3).toFixed(1)}" font-size="10" fill="var(--mut)" font-family="var(--mono)">${v.toFixed(0)}%</text>`;});
+  const zeroY=Y(0); grid+=`<line x1="${pl}" y1="${zeroY.toFixed(1)}" x2="${W-pr}" y2="${zeroY.toFixed(1)}" stroke="var(--rule2)" stroke-dasharray="2 3"/>`;
+  let lines="",legend="";
+  D.race.series.forEach((s,si)=>{
+    const col=palette[si%palette.length];
+    const pts=s.points.map((v,i)=>v==null?null:`${X(i).toFixed(1)},${Y(v).toFixed(1)}`).filter(Boolean).join(" ");
+    if(!pts) return;
+    lines+=`<polyline points="${pts}" fill="none" stroke="${col}" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" opacity="0.92"/>`;
+    const last=s.points[s.points.length-1];
+    if(last!=null){const lx=X(n-1),ly=Y(last);lines+=`<circle cx="${lx.toFixed(1)}" cy="${ly.toFixed(1)}" r="2.4" fill="${col}"/>`;}
+    legend+=`<span><i style="background:${col}"></i>${esc(s.name.split(" ")[0])}</span>`;
+  });
+  const x0=dates[0], x1=dates[n-1];
+  const xl=`<text x="${pl}" y="${H-6}" font-size="10" fill="var(--mut)" font-family="var(--mono)">${x0}</text><text x="${W-pr}" y="${H-6}" font-size="10" fill="var(--mut)" text-anchor="end" font-family="var(--mono)">${x1}</text>`;
+  return `<div class="sec">The race <span class="hint">· average return by day</span></div>
+    <div class="race"><svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Race chart of each owner's average return over time">${grid}${lines}${xl}</svg>
+    <div class="legend">${legend}</div></div>`;
+}
+
+/* ---------- pre-launch ---------- */
+function renderPre(){
+  let h = `<div class="count">
+      <span class="cd" id="cd">—</span><span class="cl">until the opening bell · ${esc(M.open_label)}</span>
+    </div>
+    <div class="sec">The field <span class="hint">· ${M.owner_count} owners · ${M.picked_count} stocks in play · picks locked</span></div>
+    <div class="rost">${D.roster.map(rosterCard).join("")}</div>`;
+  document.getElementById("app").innerHTML = h;
+  startCountdown();
+}
+function rosterCard(o){
+  const picks=o.picks.map(p=>`
+    <div class="rpick"><span class="rs">${p.sym}</span><span class="rc">${esc(p.name)}</span><span class="rsec">${esc(p.sector)}</span></div>`).join("");
+  return `<div class="rcard"><div class="rn">${esc(o.name)}</div>${picks}</div>`;
+}
+function startCountdown(){
+  const el=document.getElementById("cd"); if(!el||!M.start_utc) return;
+  const target=new Date(M.start_utc).getTime();
+  const tick=()=>{
+    let s=Math.floor((target-Date.now())/1000);
+    if(s<=0){el.textContent="Trading is live";return;}
+    const d=Math.floor(s/86400);s-=d*86400;const h=Math.floor(s/3600);s-=h*3600;const m=Math.floor(s/60);s-=m*60;
+    el.textContent=`${d}d ${h}h ${m}m ${s}s`;
+  };
+  tick(); setInterval(tick,1000);
+}
+
+/* ---------- drawer ---------- */
+let curSym=null, curTF="3M";
+const TF={"3M":91,"6M":182,"YTD":"ytd","1Y":365,"5Y":99999};
+function sliceHistory(hist,tf){
+  if(!hist||!hist.length) return [];
+  const last=hist[hist.length-1].d;
+  if(tf==="ytd"){const y=last.slice(0,4);return hist.filter(p=>p.d>=y+"-01-01");}
+  const cut=new Date(last); cut.setDate(cut.getDate()-tf);
+  const c=cut.toISOString().slice(0,10);
+  return hist.filter(p=>p.d>=c);
+}
+function chartSVG(series){
+  const W=460,H=170,pl=42,pr=12,pt=12,pb=20;
+  if(series.length<2) return `<svg viewBox="0 0 ${W} ${H}"><text x="${W/2}" y="${H/2}" text-anchor="middle" font-size="12" fill="var(--mut)">Not enough history for this range</text></svg>`;
+  const vals=series.map(p=>p.c), lo=Math.min(...vals), hi=Math.max(...vals), span=(hi-lo)||1, n=series.length;
+  const X=i=>pl+(W-pl-pr)*(i/(n-1)), Y=v=>pt+(H-pt-pb)*(1-(v-lo)/span);
+  const up=vals[n-1]>=vals[0], col=up?"var(--gain)":"var(--loss)", fill=up?"var(--gain-soft)":"var(--loss-soft)";
+  const line=series.map((p,i)=>`${X(i).toFixed(1)},${Y(p.c).toFixed(1)}`).join(" ");
+  const area=`${pl},${(H-pb).toFixed(1)} ${line} ${(W-pr)},${(H-pb).toFixed(1)}`;
+  let grid="";[hi,(hi+lo)/2,lo].forEach(v=>{const y=Y(v);grid+=`<line x1="${pl}" y1="${y.toFixed(1)}" x2="${W-pr}" y2="${y.toFixed(1)}" stroke="var(--rule)"/><text x="6" y="${(y+3).toFixed(1)}" font-size="9.5" fill="var(--mut)" font-family="var(--mono)">${v.toFixed(0)}</text>`;});
+  const xl=`<text x="${pl}" y="${H-5}" font-size="9.5" fill="var(--mut)" font-family="var(--mono)">${series[0].d}</text><text x="${W-pr}" y="${H-5}" font-size="9.5" text-anchor="end" fill="var(--mut)" font-family="var(--mono)">${series[n-1].d}</text>`;
+  return `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Price chart">${grid}<polygon points="${area}" fill="${fill}" opacity="0.5"/><polyline points="${line}" fill="none" stroke="${col}" stroke-width="1.8" stroke-linejoin="round"/>${xl}</svg>`;
+}
+function drawChart(){
+  const t=D.tickers[curSym];
+  document.getElementById("d-chart").innerHTML=chartSVG(sliceHistory(t.history,TF[curTF]));
+  document.querySelectorAll(".tf button").forEach(b=>b.classList.toggle("on",b.dataset.tf===curTF));
+}
+function openDrawer(sym){
+  const t=D.tickers[sym]; if(!t) return;
+  curSym=sym; curTF="3M";
+  const news=(t.news||[]).map(nw=>`<a class="nitem" href="${esc(nw.link)}" target="_blank" rel="noopener">${esc(nw.title)}<div class="nd">${esc(nw.pub||"")}</div></a>`).join("") || `<div class="empty">No recent headlines.</div>`;
+  const tfBtns=Object.keys(TF).map(k=>`<button data-tf="${k}">${k}</button>`).join("");
+  const stat=(k,v)=>`<div class="dstat"><span class="k">${k}</span><span class="v">${v}</span></div>`;
+  document.getElementById("drawer").innerHTML=`
+    <div class="dh">
+      <button class="x" id="d-close" aria-label="Close">✕</button>
+      <div class="dsym">${sym}</div>
+      <div class="dco">${esc(t.name)} · ${esc(t.sector)}</div>
+      <div class="dpr"><span class="dprice">${usd(t.price)}</span><span class="dchg ${cls(t.day_change_pct)}">${fmtPct1(t.day_change_pct)} today</span></div>
+    </div>
+    <div class="dbody">
+      <div class="tf">${tfBtns}</div>
+      <div class="chart" id="d-chart"></div>
+      <div class="dstats">
+        ${stat("Return since Jul 1", `<span class="${cls(t.return_pct)}">${fmtPct(t.return_pct)}</span>`)}
+        ${stat("Jul 1 baseline", usd(t.baseline))}
+        ${stat("Day range", t.day_low!=null?usd(t.day_low)+" – "+usd(t.day_high):"—")}
+        ${stat("52-wk range", t.week52_low!=null?usd(t.week52_low)+" – "+usd(t.week52_high):"—")}
+        ${stat("Volume", vol(t.volume))}
+        ${stat("Current price", usd(t.price))}
+      </div>
+      <div class="dnews"><div class="nh">Latest headlines</div>${news}</div>
+    </div>`;
+  document.querySelectorAll(".tf button").forEach(b=>b.onclick=()=>{curTF=b.dataset.tf;drawChart();});
+  document.getElementById("d-close").onclick=closeDrawer;
+  drawChart();
+  document.getElementById("scrim").classList.add("on");
+  const dr=document.getElementById("drawer"); dr.classList.add("on"); dr.setAttribute("aria-hidden","false");
+}
+function closeDrawer(){
+  document.getElementById("scrim").classList.remove("on");
+  const dr=document.getElementById("drawer"); dr.classList.remove("on"); dr.setAttribute("aria-hidden","true");
+}
+function wireTiles(){
+  document.querySelectorAll("[data-sym]").forEach(el=>{
+    el.addEventListener("click",()=>openDrawer(el.dataset.sym));
+    el.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();openDrawer(el.dataset.sym);}});
+  });
+}
+
+/* ---------- clock + wiring ---------- */
+function startClock(){
+  const el=()=>document.getElementById("clock"); if(!el())return;
+  const tick=()=>{const n=new Date();const e=el();if(e)e.textContent=n.toLocaleDateString("en-US",{weekday:"short",month:"short",day:"numeric"});};
+  tick(); setInterval(tick,30000);
+}
+renderKicker(); renderMast(); renderTape(); renderFooter(); startClock();
+if(M.state==="pre"){ renderPre(); } else { renderLive(); wireTiles(); }
+document.getElementById("scrim").addEventListener("click",closeDrawer);
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeDrawer();});
+</script>
+</body>
+</html>
