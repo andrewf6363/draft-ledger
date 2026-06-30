@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-06-30T15:38:29Z",
+  "generated_utc": "2026-06-30T15:42:15Z",
   "state": "pre",
   "standings": [
     {
@@ -18,8 +18,8 @@
           "sector": "Power & Electrification",
           "pct": null,
           "contribution": null,
-          "price": 1102.51,
-          "day_change_pct": 5.49,
+          "price": 1138.0,
+          "day_change_pct": 3.22,
           "baseline": null,
           "spark": null
         },
@@ -29,8 +29,8 @@
           "sector": "Data-Center Infrastructure",
           "pct": null,
           "contribution": null,
-          "price": 306.97,
-          "day_change_pct": 0.99,
+          "price": 329.205,
+          "day_change_pct": 7.24,
           "baseline": null,
           "spark": null
         },
@@ -40,8 +40,8 @@
           "sector": "Nuclear Utilities",
           "pct": null,
           "contribution": null,
-          "price": 259.32,
-          "day_change_pct": -1.78,
+          "price": 254.315,
+          "day_change_pct": -1.93,
           "baseline": null,
           "spark": null
         }
@@ -63,8 +63,8 @@
           "sector": "Space & Aerospace",
           "pct": null,
           "contribution": null,
-          "price": 98.01,
-          "day_change_pct": 15.93,
+          "price": 98.59,
+          "day_change_pct": 0.59,
           "baseline": null,
           "spark": null
         },
@@ -74,8 +74,8 @@
           "sector": "Nuclear Energy",
           "pct": null,
           "contribution": null,
-          "price": 52.76,
-          "day_change_pct": 5.52,
+          "price": 51.29,
+          "day_change_pct": -2.79,
           "baseline": null,
           "spark": null
         },
@@ -85,8 +85,8 @@
           "sector": "Fintech",
           "pct": null,
           "contribution": null,
-          "price": 101.83,
-          "day_change_pct": 3.18,
+          "price": 102.01,
+          "day_change_pct": 0.18,
           "baseline": null,
           "spark": null
         }
@@ -108,8 +108,8 @@
           "sector": "Nuclear Energy",
           "pct": null,
           "contribution": null,
-          "price": 21.32,
-          "day_change_pct": 7.3,
+          "price": 20.925,
+          "day_change_pct": -1.85,
           "baseline": null,
           "spark": null
         },
@@ -119,8 +119,8 @@
           "sector": "Nuclear Energy",
           "pct": null,
           "contribution": null,
-          "price": 52.76,
-          "day_change_pct": 5.52,
+          "price": 51.29,
+          "day_change_pct": -2.79,
           "baseline": null,
           "spark": null
         },
@@ -130,8 +130,8 @@
           "sector": "Space & Aerospace",
           "pct": null,
           "contribution": null,
-          "price": 20.97,
-          "day_change_pct": 5.96,
+          "price": 20.71,
+          "day_change_pct": -1.24,
           "baseline": null,
           "spark": null
         }
@@ -153,8 +153,8 @@
           "sector": "Semiconductors",
           "pct": null,
           "contribution": null,
-          "price": 1145.28,
-          "day_change_pct": 1.14,
+          "price": 1140.55,
+          "day_change_pct": -0.41,
           "baseline": null,
           "spark": null
         },
@@ -164,8 +164,8 @@
           "sector": "Data Storage",
           "pct": null,
           "contribution": null,
-          "price": 968.53,
-          "day_change_pct": 7.63,
+          "price": 956.685,
+          "day_change_pct": -1.22,
           "baseline": null,
           "spark": null
         },
@@ -175,8 +175,8 @@
           "sector": "Data Storage",
           "pct": null,
           "contribution": null,
-          "price": 2050.3899,
-          "day_change_pct": -1.93,
+          "price": 2183.8101,
+          "day_change_pct": 6.51,
           "baseline": null,
           "spark": null
         }
@@ -198,8 +198,8 @@
           "sector": "Semiconductors",
           "pct": null,
           "contribution": null,
-          "price": 1145.28,
-          "day_change_pct": 1.14,
+          "price": 1140.55,
+          "day_change_pct": -0.41,
           "baseline": null,
           "spark": null
         },
@@ -209,8 +209,8 @@
           "sector": "Semiconductors",
           "pct": null,
           "contribution": null,
-          "price": 539.49,
-          "day_change_pct": 3.43,
+          "price": 566.85,
+          "day_change_pct": 5.07,
           "baseline": null,
           "spark": null
         },
@@ -220,8 +220,8 @@
           "sector": "Semiconductors",
           "pct": null,
           "contribution": null,
-          "price": 372.45,
-          "day_change_pct": 2.04,
+          "price": 374.82,
+          "day_change_pct": 0.64,
           "baseline": null,
           "spark": null
         }
@@ -243,8 +243,8 @@
           "sector": "Electric Vehicles",
           "pct": null,
           "contribution": null,
-          "price": 411.84,
-          "day_change_pct": 8.46,
+          "price": 416.86,
+          "day_change_pct": 1.22,
           "baseline": null,
           "spark": null
         },
@@ -254,8 +254,8 @@
           "sector": "Bitcoin Treasury",
           "pct": null,
           "contribution": null,
-          "price": 92.68,
-          "day_change_pct": 12.6,
+          "price": 85.6009,
+          "day_change_pct": -7.64,
           "baseline": null,
           "spark": null
         },
@@ -265,8 +265,8 @@
           "sector": "Crypto Exchange",
           "pct": null,
           "contribution": null,
-          "price": 151.65,
-          "day_change_pct": 1.74,
+          "price": 144.69,
+          "day_change_pct": -4.59,
           "baseline": null,
           "spark": null
         }
@@ -288,8 +288,8 @@
           "sector": "Electric Vehicles",
           "pct": null,
           "contribution": null,
-          "price": 411.84,
-          "day_change_pct": 8.46,
+          "price": 416.86,
+          "day_change_pct": 1.22,
           "baseline": null,
           "spark": null
         },
@@ -299,8 +299,8 @@
           "sector": "Space & Aerospace",
           "pct": null,
           "contribution": null,
-          "price": 164.19,
-          "day_change_pct": 7.15,
+          "price": 170.565,
+          "day_change_pct": 3.88,
           "baseline": null,
           "spark": null
         },
@@ -310,8 +310,8 @@
           "sector": "E-Commerce",
           "pct": null,
           "contribution": null,
-          "price": 110.8,
-          "day_change_pct": 2.72,
+          "price": 110.95,
+          "day_change_pct": 0.14,
           "baseline": null,
           "spark": null
         }
@@ -333,8 +333,8 @@
           "sector": "Software & Cloud",
           "pct": null,
           "contribution": null,
-          "price": null,
-          "day_change_pct": null,
+          "price": 370.6,
+          "day_change_pct": 0.55,
           "baseline": null,
           "spark": null
         },
@@ -344,8 +344,8 @@
           "sector": "Cybersecurity",
           "pct": null,
           "contribution": null,
-          "price": null,
-          "day_change_pct": null,
+          "price": 140.64,
+          "day_change_pct": 2.21,
           "baseline": null,
           "spark": null
         },
@@ -355,8 +355,8 @@
           "sector": "Cybersecurity",
           "pct": null,
           "contribution": null,
-          "price": null,
-          "day_change_pct": null,
+          "price": 763.08,
+          "day_change_pct": 2.72,
           "baseline": null,
           "spark": null
         }
