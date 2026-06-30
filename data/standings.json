@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-06-30T13:08:39Z",
+  "generated_utc": "2026-06-30T13:10:36Z",
   "state": "pre",
   "standings": [
     {
@@ -299,8 +299,8 @@
           "sector": "Space & Aerospace",
           "pct": null,
           "contribution": null,
-          "price": null,
-          "day_change_pct": null,
+          "price": 164.19,
+          "day_change_pct": 7.15,
           "baseline": null,
           "spark": null
         },
@@ -310,8 +310,8 @@
           "sector": "E-Commerce",
           "pct": null,
           "contribution": null,
-          "price": null,
-          "day_change_pct": null,
+          "price": 110.8,
+          "day_change_pct": 2.72,
           "baseline": null,
           "spark": null
         }
