@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-06-29T20:33:01Z",
+  "generated_utc": "2026-06-30T12:44:26Z",
   "state": "pre",
   "standings": [
     {
@@ -173,6 +173,94 @@
           "contribution": null,
           "price": 2050.3899,
           "day_change_pct": -1.93,
+          "baseline": null,
+          "spark": null
+        }
+      ]
+    },
+    {
+      "name": "Ryan Sheekley",
+      "rank": null,
+      "avg": null,
+      "points_behind": null,
+      "movement": 0,
+      "is_new": false,
+      "pending": true,
+      "picks": [
+        {
+          "sym": "MU",
+          "name": "Micron Technology",
+          "sector": "Semiconductors",
+          "pct": null,
+          "contribution": null,
+          "price": 1145.28,
+          "day_change_pct": 1.14,
+          "baseline": null,
+          "spark": null
+        },
+        {
+          "sym": "AMD",
+          "name": "Advanced Micro Devices",
+          "sector": "Semiconductors",
+          "pct": null,
+          "contribution": null,
+          "price": null,
+          "day_change_pct": null,
+          "baseline": null,
+          "spark": null
+        },
+        {
+          "sym": "AVGO",
+          "name": "Broadcom",
+          "sector": "Semiconductors",
+          "pct": null,
+          "contribution": null,
+          "price": null,
+          "day_change_pct": null,
+          "baseline": null,
+          "spark": null
+        }
+      ]
+    },
+    {
+      "name": "Shawn Henderson",
+      "rank": null,
+      "avg": null,
+      "points_behind": null,
+      "movement": 0,
+      "is_new": false,
+      "pending": true,
+      "picks": [
+        {
+          "sym": "TSLA",
+          "name": "Tesla",
+          "sector": "Electric Vehicles",
+          "pct": null,
+          "contribution": null,
+          "price": null,
+          "day_change_pct": null,
+          "baseline": null,
+          "spark": null
+        },
+        {
+          "sym": "MSTR",
+          "name": "Strategy (MicroStrategy)",
+          "sector": "Bitcoin Treasury",
+          "pct": null,
+          "contribution": null,
+          "price": null,
+          "day_change_pct": null,
+          "baseline": null,
+          "spark": null
+        },
+        {
+          "sym": "COIN",
+          "name": "Coinbase",
+          "sector": "Crypto Exchange",
+          "pct": null,
+          "contribution": null,
+          "price": null,
+          "day_change_pct": null,
           "baseline": null,
           "spark": null
         }

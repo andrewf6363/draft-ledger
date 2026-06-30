@@ -9,5 +9,10 @@
   "LUNR": { "name": "Intuitive Machines", "sector": "Space & Aerospace" },
   "MU":   { "name": "Micron Technology",  "sector": "Semiconductors" },
   "STX":  { "name": "Seagate Technology", "sector": "Data Storage" },
-  "SNDK": { "name": "Sandisk",            "sector": "Data Storage" }
+  "SNDK": { "name": "Sandisk",            "sector": "Data Storage" },
+  "AMD":  { "name": "Advanced Micro Devices", "sector": "Semiconductors" },
+  "AVGO": { "name": "Broadcom",           "sector": "Semiconductors" },
+  "TSLA": { "name": "Tesla",              "sector": "Electric Vehicles" },
+  "MSTR": { "name": "Strategy (MicroStrategy)", "sector": "Bitcoin Treasury" },
+  "COIN": { "name": "Coinbase",           "sector": "Crypto Exchange" }
 }

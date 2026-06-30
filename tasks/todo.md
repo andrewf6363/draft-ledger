@@ -1,41 +1,41 @@
 # The Draft Ledger — Build Checklist
 
 Plan: `~/.claude/plans/i-d-like-to-build-effervescent-dawn.md`
+**Live:** https://andrewf6363.github.io/draft-ledger/ · Repo: andrewf6363/draft-ledger (public)
 
 ## Scaffold & data
-- [x] Directory structure (`data/`, `scripts/`, `assets/fonts/`, `.github/workflows/`)
-- [x] `data/owners.json` (4 known owners; 8 more arrive tonight)
-- [x] `data/tickers.json` (11 symbols, name + sector)
-- [x] `data/config.json` (title, dates, commissioner)
-- [x] Seed machine files (baseline, prices, history_long, news, standings_history, overrides)
+- [x] Directory structure, owners/tickers/config, seed machine files
 
 ## Core scripts
-- [ ] `scripts/lib.py` — pure deterministic scoring (+ tiebreaker: Andrew's contribution)
-- [ ] `scripts/test_lib.py` — unit tests, zero network
-- [ ] `scripts/fetch_prices.py` — Yahoo v8 + yfinance fallback, cache-first, baseline freeze
-- [ ] `scripts/fetch_news.py` — Yahoo RSS, best-effort
-- [ ] `scripts/build.py` — orchestrator → render `index.html`
-- [ ] `scripts/template.html` — Modern Club design + render JS + drawer + charts
-- [ ] `scripts/make_cards.py` — Pillow per-owner PNG cards
-- [ ] `scripts/update.sh` — pull → fetch → build → cards → commit-if-changed → push
-- [ ] `.github/workflows/update.yml` — 3×/trading-day cron, no supervisor
+- [x] `lib.py` pure scoring + `test_lib.py` (7 tests pass) — tiebreaker left for Andrew
+- [x] `fetch_prices.py` — Yahoo (fail-fast) → yfinance → cache; freezes Jul-1 open
+- [x] `fetch_news.py` — Google News RSS (keyless), Yahoo fallback
+- [x] `build.py` — orchestrator → index.html (pre / live / final states)
+- [x] `template.html` — Modern Club design, drawer, race chart, board, sectors, countdown
+- [x] `make_cards.py` — Pillow per-owner PNG cards + og/icon (brand fonts)
+- [x] `update.sh` + `.github/workflows/update.yml` — 3×/trading-day cron, no supervisor
 
 ## Test locally
-- [ ] Unit tests pass
-- [ ] `fetch_prices.py` dry-run resolves all 12 tickers (incl. GEV/SNDK/NNE/OKLO/LUNR)
-- [ ] `build.py` renders countdown state (pre-July) and live state (mocked baseline)
-- [ ] Preview `index.html` — tape, drawer, timeframe toggle, sparklines, responsive
+- [x] Unit tests pass (7/7)
+- [x] Pre-state build renders countdown + roster (verified in browser, 0 console errors)
+- [x] Live-state build verified via mock fixture — standings, tiles, drawer (3M/6M/YTD/1Y/5Y), race, movers, sectors
+- [x] Data reset to honest-empty before deploy
 
 ## Deploy
-- [ ] `git init` in THIS folder (isolated from home repo)
-- [ ] `gh repo create andrewf6363/draft-ledger --private`, push
-- [ ] Enable GitHub Pages (main / root)
-- [ ] `workflow_dispatch` smoke test; confirm live URL updates
+- [x] `git init` isolated repo (separate from home repo)
+- [x] Pushed to andrewf6363/draft-ledger
+- [x] Repo public (free plan can't serve Pages from private — World Cup is public too)
+- [x] GitHub Pages live (main / root) — URL returns 200, content correct
+- [x] Smoke test: Action runs green; **yfinance resolves all 11 tickers on GitHub's IP** (keyless works)
 
-## Launch (Jul 1)
-- [ ] Add remaining 8 owners to `owners.json` (tonight)
-- [ ] Confirm Action enabled in Actions tab
-- [ ] Verify baselines froze; all tickers resolve
+## Launch (Jul 1) — for Andrew
+- [ ] **Tonight:** add the remaining 8 owners to `data/owners.json` (+ new tickers to `data/tickers.json`), commit
+- [ ] Jul 1: confirm the workflow is enabled in the Actions tab; baselines freeze; board flips to live
+- [ ] (Optional) write your own tiebreaker rule in `lib.py` `break_tie()`
 
 ## Review
-_(filled in after build)_
+- Both states render cleanly; no JS errors. Drawer wiring uses direct binding (robust on touch).
+- Data is legitimate simulated-2026 (AI-infrastructure melt-up); absolute prices are high but
+  **% returns are computed consistently from one source, so standings are correct.**
+- yfinance leaves volume/day-range null; 52-wk range is derived from history as a fallback.
+- News now pulls real headlines via Google News RSS (validated locally).
