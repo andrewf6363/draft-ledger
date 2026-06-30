@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-06-30T13:10:36Z",
+  "generated_utc": "2026-06-30T15:38:29Z",
   "state": "pre",
   "standings": [
     {
@@ -312,6 +312,51 @@
           "contribution": null,
           "price": 110.8,
           "day_change_pct": 2.72,
+          "baseline": null,
+          "spark": null
+        }
+      ]
+    },
+    {
+      "name": "Brad Bone",
+      "rank": null,
+      "avg": null,
+      "points_behind": null,
+      "movement": 0,
+      "is_new": false,
+      "pending": true,
+      "champion": null,
+      "picks": [
+        {
+          "sym": "MSFT",
+          "name": "Microsoft",
+          "sector": "Software & Cloud",
+          "pct": null,
+          "contribution": null,
+          "price": null,
+          "day_change_pct": null,
+          "baseline": null,
+          "spark": null
+        },
+        {
+          "sym": "ZS",
+          "name": "Zscaler",
+          "sector": "Cybersecurity",
+          "pct": null,
+          "contribution": null,
+          "price": null,
+          "day_change_pct": null,
+          "baseline": null,
+          "spark": null
+        },
+        {
+          "sym": "CRWD",
+          "name": "CrowdStrike",
+          "sector": "Cybersecurity",
+          "pct": null,
+          "contribution": null,
+          "price": null,
+          "day_change_pct": null,
           "baseline": null,
           "spark": null
         }
