@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-06-30T18:24:06Z",
+  "generated_utc": "2026-06-30T19:24:52Z",
   "state": "pre",
   "standings": [
     {
@@ -402,6 +402,51 @@
           "contribution": null,
           "price": 1157.99,
           "day_change_pct": 5.03,
+          "baseline": null,
+          "spark": null
+        }
+      ]
+    },
+    {
+      "name": "Luke Clark",
+      "rank": null,
+      "avg": null,
+      "points_behind": null,
+      "movement": 0,
+      "is_new": false,
+      "pending": true,
+      "champion": null,
+      "picks": [
+        {
+          "sym": "MARA",
+          "name": "MARA Holdings",
+          "sector": "Bitcoin Mining",
+          "pct": null,
+          "contribution": null,
+          "price": null,
+          "day_change_pct": null,
+          "baseline": null,
+          "spark": null
+        },
+        {
+          "sym": "IOVA",
+          "name": "Iovance Biotherapeutics",
+          "sector": "Biotech",
+          "pct": null,
+          "contribution": null,
+          "price": null,
+          "day_change_pct": null,
+          "baseline": null,
+          "spark": null
+        },
+        {
+          "sym": "RZLV",
+          "name": "Rezolve AI",
+          "sector": "AI Software",
+          "pct": null,
+          "contribution": null,
+          "price": null,
+          "day_change_pct": null,
           "baseline": null,
           "spark": null
         }

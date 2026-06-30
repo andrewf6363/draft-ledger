@@ -8,6 +8,7 @@
     { "name": "Shawn Henderson", "picks": ["TSLA", "MSTR", "COIN"] },
     { "name": "Karlis Draulis", "picks": ["TSLA", "SPCX", "EBAY"] },
     { "name": "Brad Bone", "picks": ["MSFT", "ZS", "CRWD"] },
-    { "name": "John Pappas", "picks": ["ETN", "VRT", "GEV"] }
+    { "name": "John Pappas", "picks": ["ETN", "VRT", "GEV"] },
+    { "name": "Luke Clark", "picks": ["MARA", "IOVA", "RZLV"] }
   ]
 }

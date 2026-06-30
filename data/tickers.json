@@ -20,5 +20,8 @@
   "MSFT": { "name": "Microsoft",          "sector": "Software & Cloud" },
   "ZS":   { "name": "Zscaler",            "sector": "Cybersecurity" },
   "CRWD": { "name": "CrowdStrike",        "sector": "Cybersecurity" },
-  "ETN":  { "name": "Eaton",              "sector": "Power Management" }
+  "ETN":  { "name": "Eaton",              "sector": "Power Management" },
+  "MARA": { "name": "MARA Holdings",      "sector": "Bitcoin Mining" },
+  "IOVA": { "name": "Iovance Biotherapeutics", "sector": "Biotech" },
+  "RZLV": { "name": "Rezolve AI",         "sector": "AI Software" }
 }

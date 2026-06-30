@@ -29,7 +29,8 @@ Plan: `~/.claude/plans/i-d-like-to-build-effervescent-dawn.md`
 - [x] Smoke test: Action runs green; **yfinance resolves all 11 tickers on GitHub's IP** (keyless works)
 
 ## Launch (Jul 1) — for Andrew
-- [ ] **Tonight:** add the remaining 8 owners to `data/owners.json` (+ new tickers to `data/tickers.json`), commit
+- League is **10 owners** (not 12 — corrected 6/30). 9 in; only **Luke Clark** pending.
+- [ ] Add Luke Clark to `data/owners.json` (+ any new tickers to `data/tickers.json`) when his picks arrive
 - [ ] Jul 1: confirm the workflow is enabled in the Actions tab; baselines freeze; board flips to live
 - [ ] (Optional) write your own tiebreaker rule in `lib.py` `break_tie()`
 
