@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-06-30T16:11:56Z",
+  "generated_utc": "2026-06-30T18:20:25Z",
   "state": "pre",
   "standings": [
     {
@@ -357,6 +357,51 @@
           "contribution": null,
           "price": 760.63,
           "day_change_pct": 2.39,
+          "baseline": null,
+          "spark": null
+        }
+      ]
+    },
+    {
+      "name": "John Pappas",
+      "rank": null,
+      "avg": null,
+      "points_behind": null,
+      "movement": 0,
+      "is_new": false,
+      "pending": true,
+      "champion": null,
+      "picks": [
+        {
+          "sym": "ETN",
+          "name": "Eaton",
+          "sector": "Power Management",
+          "pct": null,
+          "contribution": null,
+          "price": null,
+          "day_change_pct": null,
+          "baseline": null,
+          "spark": null
+        },
+        {
+          "sym": "VRT",
+          "name": "Vertiv Holdings",
+          "sector": "Data-Center Infrastructure",
+          "pct": null,
+          "contribution": null,
+          "price": 328.38,
+          "day_change_pct": 6.97,
+          "baseline": null,
+          "spark": null
+        },
+        {
+          "sym": "GEV",
+          "name": "GE Vernova",
+          "sector": "Power & Electrification",
+          "pct": null,
+          "contribution": null,
+          "price": 1140.255,
+          "day_change_pct": 3.42,
           "baseline": null,
           "spark": null
         }

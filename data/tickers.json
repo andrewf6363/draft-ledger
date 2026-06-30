@@ -19,5 +19,6 @@
   "EBAY": { "name": "eBay",               "sector": "E-Commerce" },
   "MSFT": { "name": "Microsoft",          "sector": "Software & Cloud" },
   "ZS":   { "name": "Zscaler",            "sector": "Cybersecurity" },
-  "CRWD": { "name": "CrowdStrike",        "sector": "Cybersecurity" }
+  "CRWD": { "name": "CrowdStrike",        "sector": "Cybersecurity" },
+  "ETN":  { "name": "Eaton",              "sector": "Power Management" }
 }
