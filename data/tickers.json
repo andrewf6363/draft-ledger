@@ -14,5 +14,7 @@
   "AVGO": { "name": "Broadcom",           "sector": "Semiconductors" },
   "TSLA": { "name": "Tesla",              "sector": "Electric Vehicles" },
   "MSTR": { "name": "Strategy (MicroStrategy)", "sector": "Bitcoin Treasury" },
-  "COIN": { "name": "Coinbase",           "sector": "Crypto Exchange" }
+  "COIN": { "name": "Coinbase",           "sector": "Crypto Exchange" },
+  "SPCX": { "name": "SpaceX",             "sector": "Space & Aerospace" },
+  "EBAY": { "name": "eBay",               "sector": "E-Commerce" }
 }

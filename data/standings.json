@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-06-30T12:46:46Z",
+  "generated_utc": "2026-06-30T13:02:47Z",
   "state": "pre",
   "standings": [
     {
@@ -261,6 +261,50 @@
           "contribution": null,
           "price": 151.65,
           "day_change_pct": 1.74,
+          "baseline": null,
+          "spark": null
+        }
+      ]
+    },
+    {
+      "name": "Karlis Draulis",
+      "rank": null,
+      "avg": null,
+      "points_behind": null,
+      "movement": 0,
+      "is_new": false,
+      "pending": true,
+      "picks": [
+        {
+          "sym": "TSLA",
+          "name": "Tesla",
+          "sector": "Electric Vehicles",
+          "pct": null,
+          "contribution": null,
+          "price": 411.84,
+          "day_change_pct": 8.46,
+          "baseline": null,
+          "spark": null
+        },
+        {
+          "sym": "SPCX",
+          "name": "SpaceX",
+          "sector": "Space & Aerospace",
+          "pct": null,
+          "contribution": null,
+          "price": null,
+          "day_change_pct": null,
+          "baseline": null,
+          "spark": null
+        },
+        {
+          "sym": "EBAY",
+          "name": "eBay",
+          "sector": "E-Commerce",
+          "pct": null,
+          "contribution": null,
+          "price": null,
+          "day_change_pct": null,
           "baseline": null,
           "spark": null
         }

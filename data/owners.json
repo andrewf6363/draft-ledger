@@ -5,6 +5,7 @@
     { "name": "Keegan Ball",   "picks": ["NNE", "OKLO", "LUNR"] },
     { "name": "Andrew Fahey",  "picks": ["MU", "STX", "SNDK"] },
     { "name": "Ryan Sheekley", "picks": ["MU", "AMD", "AVGO"] },
-    { "name": "Shawn Henderson", "picks": ["TSLA", "MSTR", "COIN"] }
+    { "name": "Shawn Henderson", "picks": ["TSLA", "MSTR", "COIN"] },
+    { "name": "Karlis Draulis", "picks": ["TSLA", "SPCX", "EBAY"] }
   ]
 }
