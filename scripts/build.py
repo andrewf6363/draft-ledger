@@ -141,7 +141,7 @@ def main():
     lib.apply_movement(standings, prev_ranks)
 
     # attach presentation detail to each row
-    name_to_picks = {o["name"]: o["picks"] for o in owners}
+    champ_map = {o["name"]: o.get("champion") for o in owners}
     rows = []
     for r in standings:
         picks_detail = []
@@ -164,7 +164,8 @@ def main():
         rows.append({
             "name": r["name"], "rank": r["rank"], "avg": rnd(r["avg"]),
             "points_behind": r["points_behind"], "movement": r.get("movement", 0),
-            "is_new": r.get("is_new", False), "pending": r["pending"], "picks": picks_detail,
+            "is_new": r.get("is_new", False), "pending": r["pending"],
+            "champion": champ_map.get(r["name"]), "picks": picks_detail,
         })
 
     draft_order = [{"rank": r["rank"], "name": r["name"], "avg": r["avg"]}
@@ -224,7 +225,7 @@ def main():
         }
 
     # --- roster (pre state) ---
-    roster = [{"name": o["name"],
+    roster = [{"name": o["name"], "champion": o.get("champion"),
                "picks": [{"sym": s, "name": tickers.get(s, {}).get("name", s),
                           "sector": tickers.get(s, {}).get("sector", "")} for s in o["picks"]]}
               for o in owners]

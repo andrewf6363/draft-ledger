@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-06-30T13:02:47Z",
+  "generated_utc": "2026-06-30T13:08:39Z",
   "state": "pre",
   "standings": [
     {
@@ -10,6 +10,7 @@
       "movement": 0,
       "is_new": false,
       "pending": true,
+      "champion": null,
       "picks": [
         {
           "sym": "GEV",
@@ -54,6 +55,7 @@
       "movement": 0,
       "is_new": false,
       "pending": true,
+      "champion": null,
       "picks": [
         {
           "sym": "RKLB",
@@ -98,6 +100,7 @@
       "movement": 0,
       "is_new": false,
       "pending": true,
+      "champion": null,
       "picks": [
         {
           "sym": "NNE",
@@ -142,6 +145,7 @@
       "movement": 0,
       "is_new": false,
       "pending": true,
+      "champion": "Reigning league champion",
       "picks": [
         {
           "sym": "MU",
@@ -186,6 +190,7 @@
       "movement": 0,
       "is_new": false,
       "pending": true,
+      "champion": null,
       "picks": [
         {
           "sym": "MU",
@@ -230,6 +235,7 @@
       "movement": 0,
       "is_new": false,
       "pending": true,
+      "champion": null,
       "picks": [
         {
           "sym": "TSLA",
@@ -274,6 +280,7 @@
       "movement": 0,
       "is_new": false,
       "pending": true,
+      "champion": null,
       "picks": [
         {
           "sym": "TSLA",
