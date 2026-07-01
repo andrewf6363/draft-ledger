@@ -1,5 +1,131 @@
 {
-  "frozen_utc": null,
+  "frozen_utc": "2026-07-01T16:10:37Z",
   "open_session_date": "2026-07-01",
-  "opens": {}
+  "opens": {
+    "GEV": {
+      "open": 1146.4,
+      "source": "yfinance",
+      "captured_utc": "2026-07-01T16:10:06Z"
+    },
+    "VRT": {
+      "open": 325.8,
+      "source": "yfinance",
+      "captured_utc": "2026-07-01T16:10:07Z"
+    },
+    "CEG": {
+      "open": 246.87,
+      "source": "yfinance",
+      "captured_utc": "2026-07-01T16:10:09Z"
+    },
+    "RKLB": {
+      "open": 101.195,
+      "source": "yfinance",
+      "captured_utc": "2026-07-01T16:10:10Z"
+    },
+    "OKLO": {
+      "open": 53.63,
+      "source": "yfinance",
+      "captured_utc": "2026-07-01T16:10:11Z"
+    },
+    "HOOD": {
+      "open": 100.91,
+      "source": "yfinance",
+      "captured_utc": "2026-07-01T16:10:12Z"
+    },
+    "NNE": {
+      "open": 21.15,
+      "source": "yfinance",
+      "captured_utc": "2026-07-01T16:10:14Z"
+    },
+    "LUNR": {
+      "open": 21.865,
+      "source": "yfinance",
+      "captured_utc": "2026-07-01T16:10:15Z"
+    },
+    "MU": {
+      "open": 1082.08,
+      "source": "yfinance",
+      "captured_utc": "2026-07-01T16:10:16Z"
+    },
+    "STX": {
+      "open": 898.55,
+      "source": "yfinance",
+      "captured_utc": "2026-07-01T16:10:18Z"
+    },
+    "SNDK": {
+      "open": 2085.1699,
+      "source": "yfinance",
+      "captured_utc": "2026-07-01T16:10:19Z"
+    },
+    "AMD": {
+      "open": 557.53,
+      "source": "yfinance",
+      "captured_utc": "2026-07-01T16:10:20Z"
+    },
+    "AVGO": {
+      "open": 371.79,
+      "source": "yfinance",
+      "captured_utc": "2026-07-01T16:10:21Z"
+    },
+    "TSLA": {
+      "open": 421.57,
+      "source": "yfinance",
+      "captured_utc": "2026-07-01T16:10:23Z"
+    },
+    "MSTR": {
+      "open": 87.725,
+      "source": "yfinance",
+      "captured_utc": "2026-07-01T16:10:24Z"
+    },
+    "COIN": {
+      "open": 147.13,
+      "source": "yfinance",
+      "captured_utc": "2026-07-01T16:10:25Z"
+    },
+    "SPCX": {
+      "open": 171.565,
+      "source": "yfinance",
+      "captured_utc": "2026-07-01T16:10:26Z"
+    },
+    "EBAY": {
+      "open": 111.75,
+      "source": "yfinance",
+      "captured_utc": "2026-07-01T16:10:28Z"
+    },
+    "MSFT": {
+      "open": 380.825,
+      "source": "yfinance",
+      "captured_utc": "2026-07-01T16:10:29Z"
+    },
+    "ZS": {
+      "open": 144.25,
+      "source": "yfinance",
+      "captured_utc": "2026-07-01T16:10:30Z"
+    },
+    "CRWD": {
+      "open": 775.0,
+      "source": "yfinance",
+      "captured_utc": "2026-07-01T16:10:31Z"
+    },
+    "ETN": {
+      "open": 419.99,
+      "source": "yfinance",
+      "captured_utc": "2026-07-01T16:10:33Z"
+    },
+    "MARA": {
+      "open": 13.82,
+      "source": "yfinance",
+      "captured_utc": "2026-07-01T16:10:34Z"
+    },
+    "IOVA": {
+      "open": 4.16,
+      "source": "yfinance",
+      "captured_utc": "2026-07-01T16:10:35Z"
+    },
+    "RZLV": {
+      "open": 3.1,
+      "source": "yfinance",
+      "captured_utc": "2026-07-01T16:10:36Z"
+    }
+  }
 }
