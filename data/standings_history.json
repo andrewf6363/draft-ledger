@@ -1,3 +1,166 @@
 {
-  "snapshots": []
+  "snapshots": [
+    {
+      "date": "2026-07-01",
+      "avgs": {
+        "Shawn Henderson": 5.19,
+        "John Atkins": 1.45,
+        "Brad Bone": 0.71,
+        "Andrew Fahey": -1.76,
+        "John Pappas": -2.43,
+        "Karlis Draulis": -2.57,
+        "Ryan Sheekley": -2.75,
+        "Luke Clark": -2.82,
+        "Kyle Williams": -3.22,
+        "Keegan Ball": -3.9
+      },
+      "ranks": {
+        "Shawn Henderson": 1,
+        "John Atkins": 2,
+        "Brad Bone": 3,
+        "Andrew Fahey": 4,
+        "John Pappas": 5,
+        "Karlis Draulis": 6,
+        "Ryan Sheekley": 7,
+        "Luke Clark": 8,
+        "Kyle Williams": 9,
+        "Keegan Ball": 10
+      }
+    },
+    {
+      "date": "2026-07-02",
+      "avgs": {
+        "Shawn Henderson": 6.89,
+        "John Atkins": 2.87,
+        "Karlis Draulis": -3.16,
+        "Kyle Williams": -4.58,
+        "Luke Clark": -5.02,
+        "John Pappas": -5.26,
+        "Keegan Ball": -6.04,
+        "Ryan Sheekley": -6.67,
+        "Andrew Fahey": -11.63,
+        "Brad Bone": -23.43
+      },
+      "ranks": {
+        "Shawn Henderson": 1,
+        "John Atkins": 2,
+        "Karlis Draulis": 3,
+        "Kyle Williams": 4,
+        "Luke Clark": 5,
+        "John Pappas": 6,
+        "Keegan Ball": 7,
+        "Ryan Sheekley": 8,
+        "Andrew Fahey": 9,
+        "Brad Bone": 10
+      }
+    },
+    {
+      "date": "2026-07-03",
+      "avgs": {
+        "Shawn Henderson": 6.89,
+        "John Atkins": 2.87,
+        "Karlis Draulis": -3.16,
+        "Kyle Williams": -4.58,
+        "Luke Clark": -5.02,
+        "John Pappas": -5.26,
+        "Keegan Ball": -6.04,
+        "Ryan Sheekley": -6.67,
+        "Andrew Fahey": -11.63,
+        "Brad Bone": -23.43
+      },
+      "ranks": {
+        "Shawn Henderson": 1,
+        "John Atkins": 2,
+        "Karlis Draulis": 3,
+        "Kyle Williams": 4,
+        "Luke Clark": 5,
+        "John Pappas": 6,
+        "Keegan Ball": 7,
+        "Ryan Sheekley": 8,
+        "Andrew Fahey": 9,
+        "Brad Bone": 10
+      }
+    },
+    {
+      "date": "2026-07-06",
+      "avgs": {
+        "Shawn Henderson": 9.74,
+        "John Atkins": 1.71,
+        "Kyle Williams": -0.72,
+        "John Pappas": -1.11,
+        "Karlis Draulis": -1.73,
+        "Ryan Sheekley": -3.14,
+        "Luke Clark": -5.41,
+        "Keegan Ball": -7.16,
+        "Andrew Fahey": -9.57,
+        "Brad Bone": -22.81
+      },
+      "ranks": {
+        "Shawn Henderson": 1,
+        "John Atkins": 2,
+        "Kyle Williams": 3,
+        "John Pappas": 4,
+        "Karlis Draulis": 5,
+        "Ryan Sheekley": 6,
+        "Luke Clark": 7,
+        "Keegan Ball": 8,
+        "Andrew Fahey": 9,
+        "Brad Bone": 10
+      }
+    },
+    {
+      "date": "2026-07-07",
+      "avgs": {
+        "Shawn Henderson": 5.9,
+        "Karlis Draulis": -4.89,
+        "Kyle Williams": -5.05,
+        "John Atkins": -5.46,
+        "John Pappas": -6.01,
+        "Luke Clark": -6.3,
+        "Ryan Sheekley": -6.99,
+        "Keegan Ball": -13.27,
+        "Andrew Fahey": -14.53,
+        "Brad Bone": -23.05
+      },
+      "ranks": {
+        "Shawn Henderson": 1,
+        "Karlis Draulis": 2,
+        "Kyle Williams": 3,
+        "John Atkins": 4,
+        "John Pappas": 5,
+        "Luke Clark": 6,
+        "Ryan Sheekley": 7,
+        "Keegan Ball": 8,
+        "Andrew Fahey": 9,
+        "Brad Bone": 10
+      }
+    },
+    {
+      "date": "2026-07-08",
+      "avgs": {
+        "Shawn Henderson": 5.9,
+        "Brad Bone": 2.06,
+        "Karlis Draulis": -4.89,
+        "Kyle Williams": -5.05,
+        "John Atkins": -5.46,
+        "John Pappas": -6.01,
+        "Luke Clark": -6.3,
+        "Ryan Sheekley": -6.99,
+        "Keegan Ball": -13.27,
+        "Andrew Fahey": -14.53
+      },
+      "ranks": {
+        "Shawn Henderson": 1,
+        "Brad Bone": 2,
+        "Karlis Draulis": 3,
+        "Kyle Williams": 4,
+        "John Atkins": 5,
+        "John Pappas": 6,
+        "Luke Clark": 7,
+        "Ryan Sheekley": 8,
+        "Keegan Ball": 9,
+        "Andrew Fahey": 10
+      }
+    }
+  ]
 }
