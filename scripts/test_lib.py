@@ -91,6 +91,28 @@ def test_apply_movement():
     assert s[2]["is_new"] is True                               # New owner, no prior rank
 
 
+def test_split_adjustment_crwd():
+    ev = [{"date": "2026-07-02", "ratio": 4}]   # CrowdStrike 4-for-1, effective Jul 2
+    # Before the split is effective, nothing is adjusted (Jun 30 view).
+    assert lib.split_factor(ev, "2026-07-01", "2026-06-30") == 1.0
+    assert approx(lib.split_adjust(760.0, ev, "2026-07-01", "2026-06-30"), 760.0)
+    # Once effective, the Jul-1 baseline is restated onto the post-split basis.
+    assert lib.split_factor(ev, "2026-07-01", "2026-07-15") == 4.0
+    assert approx(lib.split_adjust(760.0, ev, "2026-07-01", "2026-07-15"), 190.0)
+    # A price already observed post-split has no later split to adjust for.
+    assert approx(lib.split_adjust(190.0, ev, "2026-07-10", "2026-07-15"), 190.0)
+    # End to end: $760 open, 4-for-1 split, $200 now -> a real +5.26%, not -74%.
+    adj_open = lib.split_adjust(760.0, ev, "2026-07-01", "2026-07-15")
+    assert approx(round(lib.pct_return(200.0, adj_open), 2), 5.26)
+    # Without the fix it would be catastrophic:
+    assert round(lib.pct_return(200.0, 760.0), 1) == -73.7
+    # Reverse split (1-for-10) scales the other way.
+    rev = [{"date": "2026-07-10", "ratio": 0.1}]
+    assert approx(lib.split_adjust(5.0, rev, "2026-07-01", "2026-07-15"), 50.0)
+    # A stock with no splits is completely untouched.
+    assert lib.split_factor([], "2026-07-01", "2026-07-15") == 1.0
+
+
 def run():
     tests = [v for k, v in sorted(globals().items()) if k.startswith("test_") and callable(v)]
     for t in tests:

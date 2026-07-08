@@ -106,6 +106,7 @@ button{font-family:inherit}
 .ml{font-size:8.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--mut);font-weight:600;white-space:nowrap}
 .mvv{font-family:var(--mono);font-size:10.5px;font-weight:600;white-space:nowrap}
 .tl-more{font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-d);font-weight:600;margin-top:6px;display:flex;align-items:center;gap:4px;opacity:.8}
+.splitnote{font-size:8.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--gold-d);font-weight:600;margin-top:5px}
 
 /* movers + sectors */
 .cols{display:grid;grid-template-columns:1fr 1fr;gap:11px}
@@ -289,6 +290,7 @@ function tile(p){
       <div><span class="ml">Jul 1</span><span class="mvv">${usd(p.baseline)}</span></div>
       <div><span class="ml">to avg</span><span class="mvv ${cls(p.contribution)}">${p.contribution==null?"—":(p.contribution>0?"+":"")+p.contribution.toFixed(1)}</span></div>
     </div>
+    ${p.split_adjusted?'<div class="splitnote">Split-adjusted</div>':''}
     <div class="tl-more">View detail →</div>
   </div>`;
 }
@@ -413,7 +415,7 @@ function openDrawer(sym){
       <div class="chart" id="d-chart"></div>
       <div class="dstats">
         ${stat("Return since Jul 1", `<span class="${cls(t.return_pct)}">${fmtPct(t.return_pct)}</span>`)}
-        ${stat("Jul 1 baseline", usd(t.baseline))}
+        ${stat("Jul 1 baseline", usd(t.baseline)+(t.split_adjusted?' <span style="color:var(--gold-d);font-size:10px">· split-adj.</span>':''))}
         ${stat("Day range", t.day_low!=null?usd(t.day_low)+" – "+usd(t.day_high):"—")}
         ${stat("52-wk range", t.week52_low!=null?usd(t.week52_low)+" – "+usd(t.week52_high):"—")}
         ${stat("Volume", vol(t.volume))}

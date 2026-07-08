@@ -1,0 +1,6 @@
+{
+  "_comment": "Commissioner split registry. Per ticker, list {date, ratio} where date = the first day the stock TRADES split-adjusted (ex-date) and ratio = new shares per old share (4-for-1 => 4; 1-for-10 reverse => 0.1). Baselines are auto-restated for splits dated after the July-1 start once they take effect; charts are smoothed for all splits. Add a line here if another pick splits during the month.",
+  "CRWD": [
+    { "date": "2026-07-02", "ratio": 4, "note": "4-for-1 split; distributed after close Jul 1, trades split-adjusted from Jul 2" }
+  ]
+}

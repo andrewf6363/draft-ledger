@@ -90,24 +90,61 @@ def main():
     news = store.load("news.json", {"tickers": {}})
     hist = store.load("standings_history.json", {"snapshots": []})
     ov = store.load("overrides.json", {"latest": {}, "baseline": {}})
+    splits = store.load("splits.json", {})
+    split_events = {k: v for k, v in splits.items() if not k.startswith("_")}
 
     start_date = cfg.get("start_session_date", "2026-07-01")
     end_date = cfg.get("end_session_date", "2026-07-31")
+    today_iso = os.environ.get("LEDGER_TODAY") or et_now().date().isoformat()
 
     opens_raw = baseline.get("opens", {})
     pt = prices.get("tickers", {})
 
     # Resolve maps (overrides win).
+    def asof(sym):
+        """Date of this ticker's most recent price — the basis we restate to. Driven
+        by the DATA, not the calendar, so a split only adjusts once the feed actually
+        reflects it (the container clock can run ahead of the market data)."""
+        rec = pt.get(sym, {}).get("recent") or []
+        if rec:
+            return rec[-1]["d"]
+        h = (longh.get("tickers", {}).get(sym, {}) or {}).get("series") or []
+        return h[-1]["d"] if h else today_iso
+
     open_by_sym, latest_by_sym = {}, {}
     for sym in tickers:
         op = ov.get("baseline", {}).get(sym)
         if op is None and sym in opens_raw:
             op = opens_raw[sym].get("open")
-        open_by_sym[sym] = op
+        # Restate the frozen (raw) July-1 open onto the CURRENT share basis (as of the
+        # latest price date), so a split mid-competition doesn't read as a crash. No-op
+        # for every stock that hasn't split as of its latest data.
+        open_by_sym[sym] = lib.split_adjust(op, split_events.get(sym), start_date, asof(sym))
         lp = ov.get("latest", {}).get(sym)
         if lp is None:
             lp = (pt.get(sym, {}).get("latest") or {}).get("price")
         latest_by_sym[sym] = lp
+
+    def adj_series(sym, series):
+        """Restate a raw close series onto the current split basis (smooths cliffs)."""
+        ev = split_events.get(sym)
+        if not ev:
+            return series
+        return [{"d": p["d"], "c": round(lib.split_adjust(p["c"], ev, p["d"], asof(sym)), 4)} for p in series]
+
+    def day_change(sym):
+        """Fetch's real-time day move, except for a stock whose split straddles the
+        day — then recompute from the split-adjusted daily series so it isn't a fake -75%."""
+        raw = pt.get(sym, {}).get("day_change_pct")
+        if not split_events.get(sym):
+            return raw
+        rec = adj_series(sym, pt.get(sym, {}).get("recent") or [])
+        if len(rec) >= 2 and rec[-2]["c"]:
+            return round((rec[-1]["c"] - rec[-2]["c"]) / rec[-2]["c"] * 100, 2)
+        return raw
+
+    def split_active(sym):
+        return lib.split_factor(split_events.get(sym), start_date, asof(sym)) != 1.0
 
     picked = []
     for o in owners:
@@ -149,7 +186,7 @@ def main():
             sym = item["sym"]
             op = open_by_sym.get(sym)
             tp = pt.get(sym, {})
-            rec = [c for c in ((tp.get("recent") or [])) if c["d"] >= start_date]
+            rec = [c for c in adj_series(sym, (tp.get("recent") or [])) if c["d"] >= start_date]
             picks_detail.append({
                 "sym": sym,
                 "name": tickers.get(sym, {}).get("name", sym),
@@ -157,8 +194,9 @@ def main():
                 "pct": rnd(item["pct"]),
                 "contribution": rnd(lib.contribution(item["pct"], len(r["picks"]))),
                 "price": latest_by_sym.get(sym),
-                "day_change_pct": tp.get("day_change_pct"),
+                "day_change_pct": day_change(sym),
                 "baseline": rnd(op, 4) if op is not None else None,
+                "split_adjusted": split_active(sym),
                 "spark": spark([c["c"] for c in rec], op),
             })
         rows.append({
@@ -178,7 +216,7 @@ def main():
         for o in owners:
             for s in o["picks"]:
                 owners_of.setdefault(s, []).append(o["name"])
-        moved = [(s, pt.get(s, {}).get("day_change_pct")) for s in picked]
+        moved = [(s, day_change(s)) for s in picked]
         moved = [(s, d) for s, d in moved if d is not None]
         if moved:
             g = max(moved, key=lambda x: x[1])
@@ -207,19 +245,24 @@ def main():
         op = open_by_sym.get(sym)
         lp = latest_by_sym.get(sym)
         tp = pt.get(sym, {})
-        series = (longh.get("tickers", {}).get(sym, {}) or {}).get("series", [])
+        series = adj_series(sym, (longh.get("tickers", {}).get(sym, {}) or {}).get("series", []))
         yr = [x["c"] for x in series[-252:]]   # ~1 trading year, for a 52-wk range fallback
+        w52h = round(max(yr), 4) if yr else None
+        w52l = round(min(yr), 4) if yr else None
+        if not split_events.get(sym):   # a splitter uses the adjusted series so the range matches the price scale
+            w52h = tp.get("week52_high") or w52h
+            w52l = tp.get("week52_low") or w52l
         tick_detail[sym] = {
             "name": tickers.get(sym, {}).get("name", sym),
             "sector": tickers.get(sym, {}).get("sector", ""),
             "price": lp,
-            "day_change_pct": tp.get("day_change_pct"),
+            "day_change_pct": day_change(sym),
             "baseline": rnd(op, 4) if op is not None else None,
             "return_pct": rnd(lib.pct_return(lp, op)),
-            "week52_high": tp.get("week52_high") or (round(max(yr), 4) if yr else None),
-            "week52_low": tp.get("week52_low") or (round(min(yr), 4) if yr else None),
+            "week52_high": w52h, "week52_low": w52l,
             "day_high": tp.get("day_high"), "day_low": tp.get("day_low"),
             "volume": tp.get("volume"),
+            "split_adjusted": split_active(sym),
             "history": series,
             "news": (news.get("tickers", {}).get(sym, {}) or {}).get("items", []),
         }

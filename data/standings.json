@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-06-30T19:26:05Z",
+  "generated_utc": "2026-07-08T14:17:19Z",
   "state": "pre",
   "standings": [
     {
@@ -21,6 +21,7 @@
           "price": 1162.41,
           "day_change_pct": 5.43,
           "baseline": null,
+          "split_adjusted": false,
           "spark": null
         },
         {
@@ -32,6 +33,7 @@
           "price": 334.07,
           "day_change_pct": 8.83,
           "baseline": null,
+          "split_adjusted": false,
           "spark": null
         },
         {
@@ -43,6 +45,7 @@
           "price": 247.14,
           "day_change_pct": -4.7,
           "baseline": null,
+          "split_adjusted": false,
           "spark": null
         }
       ]
@@ -66,6 +69,7 @@
           "price": 101.37,
           "day_change_pct": 3.43,
           "baseline": null,
+          "split_adjusted": false,
           "spark": null
         },
         {
@@ -77,6 +81,7 @@
           "price": 51.8245,
           "day_change_pct": -1.77,
           "baseline": null,
+          "split_adjusted": false,
           "spark": null
         },
         {
@@ -88,6 +93,7 @@
           "price": 101.11,
           "day_change_pct": -0.71,
           "baseline": null,
+          "split_adjusted": false,
           "spark": null
         }
       ]
@@ -111,6 +117,7 @@
           "price": 21.165,
           "day_change_pct": -0.73,
           "baseline": null,
+          "split_adjusted": false,
           "spark": null
         },
         {
@@ -122,6 +129,7 @@
           "price": 51.8245,
           "day_change_pct": -1.77,
           "baseline": null,
+          "split_adjusted": false,
           "spark": null
         },
         {
@@ -133,6 +141,7 @@
           "price": 21.445,
           "day_change_pct": 2.27,
           "baseline": null,
+          "split_adjusted": false,
           "spark": null
         }
       ]
@@ -156,6 +165,7 @@
           "price": 1160.15,
           "day_change_pct": 1.3,
           "baseline": null,
+          "split_adjusted": false,
           "spark": null
         },
         {
@@ -167,6 +177,7 @@
           "price": 954.49,
           "day_change_pct": -1.45,
           "baseline": null,
+          "split_adjusted": false,
           "spark": null
         },
         {
@@ -178,6 +189,7 @@
           "price": 2257.4199,
           "day_change_pct": 10.1,
           "baseline": null,
+          "split_adjusted": false,
           "spark": null
         }
       ]
@@ -201,6 +213,7 @@
           "price": 1160.15,
           "day_change_pct": 1.3,
           "baseline": null,
+          "split_adjusted": false,
           "spark": null
         },
         {
@@ -212,6 +225,7 @@
           "price": 583.1301,
           "day_change_pct": 8.09,
           "baseline": null,
+          "split_adjusted": false,
           "spark": null
         },
         {
@@ -223,6 +237,7 @@
           "price": 378.38,
           "day_change_pct": 1.59,
           "baseline": null,
+          "split_adjusted": false,
           "spark": null
         }
       ]
@@ -246,6 +261,7 @@
           "price": 422.32,
           "day_change_pct": 2.54,
           "baseline": null,
+          "split_adjusted": false,
           "spark": null
         },
         {
@@ -257,6 +273,7 @@
           "price": 86.71,
           "day_change_pct": -6.44,
           "baseline": null,
+          "split_adjusted": false,
           "spark": null
         },
         {
@@ -268,6 +285,7 @@
           "price": 146.3437,
           "day_change_pct": -3.5,
           "baseline": null,
+          "split_adjusted": false,
           "spark": null
         }
       ]
@@ -291,6 +309,7 @@
           "price": 422.32,
           "day_change_pct": 2.54,
           "baseline": null,
+          "split_adjusted": false,
           "spark": null
         },
         {
@@ -302,6 +321,7 @@
           "price": 171.08,
           "day_change_pct": 4.2,
           "baseline": null,
+          "split_adjusted": false,
           "spark": null
         },
         {
@@ -313,6 +333,7 @@
           "price": 111.06,
           "day_change_pct": 0.23,
           "baseline": null,
+          "split_adjusted": false,
           "spark": null
         }
       ]
@@ -336,6 +357,7 @@
           "price": 371.725,
           "day_change_pct": 0.86,
           "baseline": null,
+          "split_adjusted": false,
           "spark": null
         },
         {
@@ -347,6 +369,7 @@
           "price": 141.12,
           "day_change_pct": 2.56,
           "baseline": null,
+          "split_adjusted": false,
           "spark": null
         },
         {
@@ -358,6 +381,7 @@
           "price": 763.26,
           "day_change_pct": 2.74,
           "baseline": null,
+          "split_adjusted": false,
           "spark": null
         }
       ]
@@ -381,6 +405,7 @@
           "price": 426.43,
           "day_change_pct": 4.45,
           "baseline": null,
+          "split_adjusted": false,
           "spark": null
         },
         {
@@ -392,6 +417,7 @@
           "price": 334.07,
           "day_change_pct": 8.83,
           "baseline": null,
+          "split_adjusted": false,
           "spark": null
         },
         {
@@ -403,6 +429,7 @@
           "price": 1162.41,
           "day_change_pct": 5.43,
           "baseline": null,
+          "split_adjusted": false,
           "spark": null
         }
       ]
@@ -426,6 +453,7 @@
           "price": 13.7147,
           "day_change_pct": -2.25,
           "baseline": null,
+          "split_adjusted": false,
           "spark": null
         },
         {
@@ -437,6 +465,7 @@
           "price": 4.1832,
           "day_change_pct": -0.64,
           "baseline": null,
+          "split_adjusted": false,
           "spark": null
         },
         {
@@ -448,6 +477,7 @@
           "price": 3.2099,
           "day_change_pct": 23.46,
           "baseline": null,
+          "split_adjusted": false,
           "spark": null
         }
       ]
