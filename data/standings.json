@@ -1,70 +1,13 @@
 {
-  "generated_utc": "2026-07-13T21:13:04Z",
+  "generated_utc": "2026-07-14T15:11:34Z",
   "state": "live",
   "standings": [
     {
-      "name": "Shawn Henderson",
-      "rank": 1,
-      "avg": 1.86,
-      "points_behind": 0.0,
-      "movement": 0,
-      "is_new": false,
-      "pending": false,
-      "champion": null,
-      "picks": [
-        {
-          "sym": "TSLA",
-          "name": "Tesla",
-          "sector": "Electric Vehicles",
-          "pct": -6.36,
-          "contribution": -2.12,
-          "price": 394.76,
-          "day_change_pct": -3.19,
-          "baseline": 421.57,
-          "split_adjusted": false,
-          "spark": {
-            "points": "2.0,3.9 9.5,2.0 17.0,18.0 24.5,4.8 32.0,13.3 39.5,17.7 47.0,11.4 54.5,10.8 62.0,17.3",
-            "up": false
-          }
-        },
-        {
-          "sym": "MSTR",
-          "name": "Strategy (MicroStrategy)",
-          "sector": "Bitcoin Treasury",
-          "pct": 4.99,
-          "contribution": 1.66,
-          "price": 92.1,
-          "day_change_pct": -2.68,
-          "baseline": 87.725,
-          "split_adjusted": false,
-          "spark": {
-            "points": "2.0,18.0 9.5,11.1 17.0,2.0 24.5,2.0 32.0,6.2 39.5,10.5 47.0,10.4 54.5,9.5 62.0,12.6",
-            "up": true
-          }
-        },
-        {
-          "sym": "COIN",
-          "name": "Coinbase",
-          "sector": "Crypto Exchange",
-          "pct": 6.96,
-          "contribution": 2.32,
-          "price": 157.37,
-          "day_change_pct": -1.07,
-          "baseline": 147.13,
-          "split_adjusted": false,
-          "spark": {
-            "points": "2.0,18.0 9.5,9.1 17.0,4.5 24.5,2.0 32.0,5.9 39.5,9.0 47.0,9.7 54.5,9.2 62.0,10.5",
-            "up": true
-          }
-        }
-      ]
-    },
-    {
       "name": "Brad Bone",
-      "rank": 2,
-      "avg": -0.68,
-      "points_behind": 2.54,
-      "movement": 2,
+      "rank": 1,
+      "avg": 4.9,
+      "points_behind": 0.0,
+      "movement": 1,
       "is_new": false,
       "pending": false,
       "champion": null,
@@ -73,14 +16,14 @@
           "sym": "MSFT",
           "name": "Microsoft",
           "sector": "Software & Cloud",
-          "pct": 2.67,
-          "contribution": 0.89,
-          "price": 390.99,
-          "day_change_pct": 1.53,
+          "pct": 1.49,
+          "contribution": 0.5,
+          "price": 386.495,
+          "day_change_pct": -1.15,
           "baseline": 380.825,
           "split_adjusted": false,
           "spark": {
-            "points": "2.0,18.0 9.5,12.6 17.0,2.8 24.5,8.7 32.0,5.4 39.5,14.0 47.0,12.4 54.5,11.3 62.0,2.0",
+            "points": "2.0,18.0 8.7,12.6 15.3,2.8 22.0,8.7 28.7,5.4 35.3,14.0 42.0,12.4 48.7,11.3 55.3,2.0 62.0,9.1",
             "up": true
           }
         },
@@ -88,86 +31,86 @@
           "sym": "ZS",
           "name": "Zscaler",
           "sector": "Cybersecurity",
-          "pct": -1.68,
-          "contribution": -0.56,
-          "price": 141.82,
-          "day_change_pct": 1.83,
+          "pct": 6.77,
+          "contribution": 2.26,
+          "price": 154.01,
+          "day_change_pct": 8.6,
           "baseline": 144.25,
           "split_adjusted": false,
           "spark": {
-            "points": "2.0,10.9 9.5,7.7 17.0,6.4 24.5,2.0 32.0,3.3 39.5,11.9 47.0,6.7 54.5,18.0 62.0,14.3",
-            "up": false
+            "points": "2.0,12.6 8.7,10.2 15.3,9.3 22.0,5.9 28.7,6.9 35.3,13.4 42.0,9.5 48.7,18.0 55.3,15.2 62.0,2.0",
+            "up": true
           }
         },
         {
           "sym": "CRWD",
           "name": "CrowdStrike",
           "sector": "Cybersecurity",
-          "pct": -3.01,
-          "contribution": -1.0,
-          "price": 187.91,
-          "day_change_pct": 0.39,
+          "pct": 6.45,
+          "contribution": 2.15,
+          "price": 206.25,
+          "day_change_pct": 9.76,
           "baseline": 193.75,
           "split_adjusted": true,
           "spark": {
-            "points": "2.0,2.6 9.5,18.0 17.0,2.6 24.5,2.0 32.0,2.5 39.5,2.9 47.0,2.1 54.5,3.3 62.0,3.2",
-            "up": false
+            "points": "2.0,3.3 8.7,18.0 15.3,3.2 22.0,2.7 28.7,3.2 35.3,3.5 42.0,2.8 48.7,3.9 55.3,3.9 62.0,2.0",
+            "up": true
           }
         }
       ]
     },
     {
-      "name": "Kyle Williams",
-      "rank": 3,
-      "avg": -3.61,
-      "points_behind": 5.47,
-      "movement": 0,
+      "name": "Shawn Henderson",
+      "rank": 2,
+      "avg": 4.58,
+      "points_behind": 0.32,
+      "movement": -1,
       "is_new": false,
       "pending": false,
       "champion": null,
       "picks": [
         {
-          "sym": "GEV",
-          "name": "GE Vernova",
-          "sector": "Power & Electrification",
-          "pct": -9.05,
-          "contribution": -3.02,
-          "price": 1042.6,
-          "day_change_pct": -4.49,
-          "baseline": 1146.4,
+          "sym": "TSLA",
+          "name": "Tesla",
+          "sector": "Electric Vehicles",
+          "pct": -4.64,
+          "contribution": -1.55,
+          "price": 402.01,
+          "day_change_pct": 1.84,
+          "baseline": 421.57,
           "split_adjusted": false,
           "spark": {
-            "points": "2.0,2.8 9.5,4.6 17.0,7.7 24.5,2.0 32.0,13.0 39.5,13.8 47.0,13.2 54.5,10.8 62.0,18.0",
+            "points": "2.0,3.9 8.7,2.0 15.3,18.0 22.0,4.8 28.7,13.3 35.3,17.7 42.0,11.4 48.7,10.8 55.3,17.3 62.0,13.7",
             "up": false
           }
         },
         {
-          "sym": "VRT",
-          "name": "Vertiv Holdings",
-          "sector": "Data-Center Infrastructure",
-          "pct": -6.12,
-          "contribution": -2.04,
-          "price": 305.87,
-          "day_change_pct": -4.07,
-          "baseline": 325.8,
+          "sym": "MSTR",
+          "name": "Strategy (MicroStrategy)",
+          "sector": "Bitcoin Treasury",
+          "pct": 10.56,
+          "contribution": 3.52,
+          "price": 96.99,
+          "day_change_pct": 5.31,
+          "baseline": 87.725,
           "split_adjusted": false,
           "spark": {
-            "points": "2.0,2.0 9.5,11.1 17.0,18.0 24.5,6.6 32.0,14.8 39.5,7.1 47.0,3.2 54.5,6.4 62.0,14.6",
-            "up": false
+            "points": "2.0,18.0 8.7,11.1 15.3,2.0 22.0,2.0 28.7,6.2 35.3,10.5 42.0,10.4 48.7,9.5 55.3,12.6 62.0,6.6",
+            "up": true
           }
         },
         {
-          "sym": "CEG",
-          "name": "Constellation Energy",
-          "sector": "Nuclear Utilities",
-          "pct": 4.33,
-          "contribution": 1.44,
-          "price": 257.57,
-          "day_change_pct": 2.46,
-          "baseline": 246.87,
+          "sym": "COIN",
+          "name": "Coinbase",
+          "sector": "Crypto Exchange",
+          "pct": 7.82,
+          "contribution": 2.61,
+          "price": 158.63,
+          "day_change_pct": 0.8,
+          "baseline": 147.13,
           "split_adjusted": false,
           "spark": {
-            "points": "2.0,10.1 9.5,18.0 17.0,15.9 24.5,10.9 32.0,15.6 39.5,11.9 47.0,7.2 54.5,6.7 62.0,2.0",
+            "points": "2.0,18.0 8.7,9.1 15.3,4.5 22.0,2.0 28.7,5.9 35.3,9.0 42.0,9.7 48.7,9.2 55.3,10.5 62.0,9.5",
             "up": true
           }
         }
@@ -175,10 +118,10 @@
     },
     {
       "name": "Ryan Sheekley",
-      "rank": 4,
-      "avg": -4.75,
-      "points_behind": 6.61,
-      "movement": -2,
+      "rank": 3,
+      "avg": -0.8,
+      "points_behind": 5.7,
+      "movement": 1,
       "is_new": false,
       "pending": false,
       "champion": null,
@@ -187,14 +130,14 @@
           "sym": "MU",
           "name": "Micron Technology",
           "sector": "Semiconductors",
-          "pct": -13.41,
-          "contribution": -4.47,
-          "price": 937.0,
-          "day_change_pct": -4.32,
+          "pct": -10.0,
+          "contribution": -3.33,
+          "price": 973.82,
+          "day_change_pct": 3.93,
           "baseline": 1082.08,
           "split_adjusted": false,
           "spark": {
-            "points": "2.0,2.0 9.5,7.5 17.0,13.7 24.5,12.7 32.0,17.8 39.5,16.7 47.0,12.0 54.5,13.3 62.0,18.0",
+            "points": "2.0,2.0 8.7,7.5 15.3,13.7 22.0,12.7 28.7,17.8 35.3,16.7 42.0,12.0 48.7,13.3 55.3,18.0 62.0,13.9",
             "up": false
           }
         },
@@ -202,29 +145,86 @@
           "sym": "AMD",
           "name": "Advanced Micro Devices",
           "sector": "Semiconductors",
-          "pct": -4.15,
-          "contribution": -1.38,
-          "price": 534.39,
-          "day_change_pct": -4.21,
+          "pct": 1.1,
+          "contribution": 0.37,
+          "price": 563.635,
+          "day_change_pct": 5.47,
           "baseline": 557.53,
           "split_adjusted": false,
           "spark": {
-            "points": "2.0,2.1 9.5,8.5 17.0,17.3 24.5,4.2 32.0,18.0 39.5,17.5 47.0,6.3 54.5,2.0 62.0,11.0",
-            "up": false
+            "points": "2.0,4.1 8.7,9.7 15.3,17.4 22.0,5.9 28.7,18.0 35.3,17.6 42.0,7.7 48.7,3.9 55.3,11.8 62.0,2.0",
+            "up": true
           }
         },
         {
           "sym": "AVGO",
           "name": "Broadcom",
           "sector": "Semiconductors",
-          "pct": 3.3,
-          "contribution": 1.1,
-          "price": 384.05,
-          "day_change_pct": -3.98,
+          "pct": 6.51,
+          "contribution": 2.17,
+          "price": 395.98,
+          "day_change_pct": 3.11,
           "baseline": 371.79,
           "split_adjusted": false,
           "spark": {
-            "points": "2.0,13.5 9.5,14.5 17.0,18.0 24.5,12.7 32.0,13.9 39.5,6.9 47.0,2.0 54.5,2.4 62.0,8.7",
+            "points": "2.0,13.5 8.7,14.5 15.3,18.0 22.0,12.7 28.7,13.9 35.3,6.9 42.0,2.0 48.7,2.4 55.3,8.7 62.0,4.0",
+            "up": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "Kyle Williams",
+      "rank": 4,
+      "avg": -2.06,
+      "points_behind": 6.96,
+      "movement": -1,
+      "is_new": false,
+      "pending": false,
+      "champion": null,
+      "picks": [
+        {
+          "sym": "GEV",
+          "name": "GE Vernova",
+          "sector": "Power & Electrification",
+          "pct": -6.16,
+          "contribution": -2.05,
+          "price": 1075.8149,
+          "day_change_pct": 3.19,
+          "baseline": 1146.4,
+          "split_adjusted": false,
+          "spark": {
+            "points": "2.0,2.8 8.7,4.6 15.3,7.7 22.0,2.0 28.7,13.0 35.3,13.8 42.0,13.2 48.7,10.8 55.3,18.0 62.0,13.1",
+            "up": false
+          }
+        },
+        {
+          "sym": "VRT",
+          "name": "Vertiv Holdings",
+          "sector": "Data-Center Infrastructure",
+          "pct": -6.11,
+          "contribution": -2.04,
+          "price": 305.88,
+          "day_change_pct": 0.0,
+          "baseline": 325.8,
+          "split_adjusted": false,
+          "spark": {
+            "points": "2.0,2.0 8.7,11.1 15.3,18.0 22.0,6.6 28.7,14.8 35.3,7.1 42.0,3.2 48.7,6.4 55.3,14.6 62.0,14.6",
+            "up": false
+          }
+        },
+        {
+          "sym": "CEG",
+          "name": "Constellation Energy",
+          "sector": "Nuclear Utilities",
+          "pct": 6.09,
+          "contribution": 2.03,
+          "price": 261.905,
+          "day_change_pct": 1.68,
+          "baseline": 246.87,
+          "split_adjusted": false,
+          "spark": {
+            "points": "2.0,11.5 8.7,18.0 15.3,16.3 22.0,12.1 28.7,16.0 35.3,12.9 42.0,9.0 48.7,8.6 55.3,4.7 62.0,2.0",
             "up": true
           }
         }
@@ -233,8 +233,8 @@
     {
       "name": "John Pappas",
       "rank": 5,
-      "avg": -6.42,
-      "points_behind": 8.28,
+      "avg": -4.75,
+      "points_behind": 9.65,
       "movement": 0,
       "is_new": false,
       "pending": false,
@@ -244,14 +244,14 @@
           "sym": "ETN",
           "name": "Eaton",
           "sector": "Power Management",
-          "pct": -4.08,
-          "contribution": -1.36,
-          "price": 402.85,
-          "day_change_pct": -1.09,
+          "pct": -1.99,
+          "contribution": -0.66,
+          "price": 411.62,
+          "day_change_pct": 2.18,
           "baseline": 419.99,
           "split_adjusted": false,
           "spark": {
-            "points": "2.0,2.0 9.5,7.1 17.0,16.1 24.5,6.3 32.0,18.0 39.5,15.4 47.0,11.3 54.5,10.4 62.0,13.3",
+            "points": "2.0,2.0 8.7,7.1 15.3,16.1 22.0,6.3 28.7,18.0 35.3,15.4 42.0,11.3 48.7,10.4 55.3,13.3 62.0,7.5",
             "up": false
           }
         },
@@ -259,14 +259,14 @@
           "sym": "VRT",
           "name": "Vertiv Holdings",
           "sector": "Data-Center Infrastructure",
-          "pct": -6.12,
+          "pct": -6.11,
           "contribution": -2.04,
-          "price": 305.87,
-          "day_change_pct": -4.07,
+          "price": 305.88,
+          "day_change_pct": 0.0,
           "baseline": 325.8,
           "split_adjusted": false,
           "spark": {
-            "points": "2.0,2.0 9.5,11.1 17.0,18.0 24.5,6.6 32.0,14.8 39.5,7.1 47.0,3.2 54.5,6.4 62.0,14.6",
+            "points": "2.0,2.0 8.7,11.1 15.3,18.0 22.0,6.6 28.7,14.8 35.3,7.1 42.0,3.2 48.7,6.4 55.3,14.6 62.0,14.6",
             "up": false
           }
         },
@@ -274,14 +274,14 @@
           "sym": "GEV",
           "name": "GE Vernova",
           "sector": "Power & Electrification",
-          "pct": -9.05,
-          "contribution": -3.02,
-          "price": 1042.6,
-          "day_change_pct": -4.49,
+          "pct": -6.16,
+          "contribution": -2.05,
+          "price": 1075.8149,
+          "day_change_pct": 3.19,
           "baseline": 1146.4,
           "split_adjusted": false,
           "spark": {
-            "points": "2.0,2.8 9.5,4.6 17.0,7.7 24.5,2.0 32.0,13.0 39.5,13.8 47.0,13.2 54.5,10.8 62.0,18.0",
+            "points": "2.0,2.8 8.7,4.6 15.3,7.7 22.0,2.0 28.7,13.0 35.3,13.8 42.0,13.2 48.7,10.8 55.3,18.0 62.0,13.1",
             "up": false
           }
         }
@@ -290,8 +290,8 @@
     {
       "name": "Karlis Draulis",
       "rank": 6,
-      "avg": -7.42,
-      "points_behind": 9.28,
+      "avg": -7.06,
+      "points_behind": 11.96,
       "movement": 0,
       "is_new": false,
       "pending": false,
@@ -301,14 +301,14 @@
           "sym": "TSLA",
           "name": "Tesla",
           "sector": "Electric Vehicles",
-          "pct": -6.36,
-          "contribution": -2.12,
-          "price": 394.76,
-          "day_change_pct": -3.19,
+          "pct": -4.64,
+          "contribution": -1.55,
+          "price": 402.01,
+          "day_change_pct": 1.84,
           "baseline": 421.57,
           "split_adjusted": false,
           "spark": {
-            "points": "2.0,3.9 9.5,2.0 17.0,18.0 24.5,4.8 32.0,13.3 39.5,17.7 47.0,11.4 54.5,10.8 62.0,17.3",
+            "points": "2.0,3.9 8.7,2.0 15.3,18.0 22.0,4.8 28.7,13.3 35.3,17.7 42.0,11.4 48.7,10.8 55.3,17.3 62.0,13.7",
             "up": false
           }
         },
@@ -316,14 +316,14 @@
           "sym": "SPCX",
           "name": "SpaceX",
           "sector": "Space & Aerospace",
-          "pct": -18.9,
-          "contribution": -6.3,
-          "price": 139.14,
-          "day_change_pct": -4.24,
+          "pct": -17.33,
+          "contribution": -5.78,
+          "price": 141.84,
+          "day_change_pct": 1.94,
           "baseline": 171.565,
           "split_adjusted": false,
           "spark": {
-            "points": "2.0,2.0 9.5,8.9 17.0,6.7 24.5,7.5 32.0,12.9 39.5,13.5 47.0,11.6 54.5,15.0 62.0,18.0",
+            "points": "2.0,2.0 8.7,8.9 15.3,6.7 22.0,7.5 28.7,12.9 35.3,13.5 42.0,11.6 48.7,15.0 55.3,18.0 62.0,16.7",
             "up": false
           }
         },
@@ -331,14 +331,14 @@
           "sym": "EBAY",
           "name": "eBay",
           "sector": "E-Commerce",
-          "pct": 2.99,
-          "contribution": 1.0,
-          "price": 115.09,
-          "day_change_pct": -1.8,
+          "pct": 0.8,
+          "contribution": 0.27,
+          "price": 112.64,
+          "day_change_pct": -2.13,
           "baseline": 111.75,
           "split_adjusted": false,
           "spark": {
-            "points": "2.0,16.8 9.5,18.0 17.0,8.6 24.5,11.7 32.0,8.9 39.5,7.5 47.0,2.0 54.5,2.3 62.0,7.9",
+            "points": "2.0,16.8 8.7,18.0 15.3,8.6 22.0,11.7 28.7,8.9 35.3,7.5 42.0,2.0 48.7,2.3 55.3,7.9 62.0,14.4",
             "up": true
           }
         }
@@ -347,9 +347,9 @@
     {
       "name": "John Atkins",
       "rank": 7,
-      "avg": -9.96,
-      "points_behind": 11.82,
-      "movement": 1,
+      "avg": -8.38,
+      "points_behind": 13.28,
+      "movement": 0,
       "is_new": false,
       "pending": false,
       "champion": null,
@@ -358,14 +358,14 @@
           "sym": "RKLB",
           "name": "Rocket Lab",
           "sector": "Space & Aerospace",
-          "pct": -24.18,
-          "contribution": -8.06,
-          "price": 76.73,
-          "day_change_pct": -5.32,
+          "pct": -20.16,
+          "contribution": -6.72,
+          "price": 80.795,
+          "day_change_pct": 5.3,
           "baseline": 101.195,
           "split_adjusted": false,
           "spark": {
-            "points": "2.0,2.0 9.5,2.7 17.0,2.5 24.5,7.3 32.0,13.6 39.5,13.7 47.0,14.2 54.5,15.2 62.0,18.0",
+            "points": "2.0,2.0 8.7,2.7 15.3,2.5 22.0,7.3 28.7,13.6 35.3,13.7 42.0,14.2 48.7,15.2 55.3,18.0 62.0,15.3",
             "up": false
           }
         },
@@ -373,14 +373,14 @@
           "sym": "OKLO",
           "name": "Oklo",
           "sector": "Nuclear Energy",
-          "pct": -14.58,
-          "contribution": -4.86,
-          "price": 45.81,
-          "day_change_pct": -6.22,
+          "pct": -14.36,
+          "contribution": -4.79,
+          "price": 45.93,
+          "day_change_pct": 0.26,
           "baseline": 53.63,
           "split_adjusted": false,
           "spark": {
-            "points": "2.0,2.0 9.5,4.4 17.0,4.6 24.5,5.7 32.0,13.7 39.5,15.0 47.0,10.9 54.5,11.8 62.0,18.0",
+            "points": "2.0,2.0 8.7,4.4 15.3,4.6 22.0,5.7 28.7,13.7 35.3,15.0 42.0,10.9 48.7,11.8 55.3,18.0 62.0,17.8",
             "up": false
           }
         },
@@ -388,82 +388,25 @@
           "sym": "HOOD",
           "name": "Robinhood Markets",
           "sector": "Fintech",
-          "pct": 8.87,
-          "contribution": 2.96,
-          "price": 109.86,
-          "day_change_pct": -1.88,
+          "pct": 9.39,
+          "contribution": 3.13,
+          "price": 110.385,
+          "day_change_pct": 0.48,
           "baseline": 100.91,
           "split_adjusted": false,
           "spark": {
-            "points": "2.0,18.0 9.5,10.6 17.0,6.6 24.5,2.0 32.0,6.5 39.5,5.9 47.0,4.3 54.5,7.4 62.0,9.4",
+            "points": "2.0,18.0 8.7,10.6 15.3,6.6 22.0,2.0 28.7,6.5 35.3,5.9 42.0,4.3 48.7,7.4 55.3,9.4 62.0,8.9",
             "up": true
           }
         }
       ]
     },
     {
-      "name": "Luke Clark",
-      "rank": 8,
-      "avg": -11.45,
-      "points_behind": 13.31,
-      "movement": 1,
-      "is_new": false,
-      "pending": false,
-      "champion": null,
-      "picks": [
-        {
-          "sym": "MARA",
-          "name": "MARA Holdings",
-          "sector": "Bitcoin Mining",
-          "pct": -11.79,
-          "contribution": -3.93,
-          "price": 12.19,
-          "day_change_pct": -3.25,
-          "baseline": 13.82,
-          "split_adjusted": false,
-          "spark": {
-            "points": "2.0,2.0 9.5,6.0 17.0,14.6 24.5,9.7 32.0,17.7 39.5,18.0 47.0,7.3 54.5,12.8 62.0,16.5",
-            "up": false
-          }
-        },
-        {
-          "sym": "IOVA",
-          "name": "Iovance Biotherapeutics",
-          "sector": "Biotech",
-          "pct": -2.88,
-          "contribution": -0.96,
-          "price": 4.04,
-          "day_change_pct": -4.49,
-          "baseline": 4.16,
-          "split_adjusted": false,
-          "spark": {
-            "points": "2.0,10.4 9.5,18.0 17.0,4.4 24.5,9.2 32.0,2.8 39.5,5.6 47.0,2.0 54.5,7.6 62.0,15.2",
-            "up": false
-          }
-        },
-        {
-          "sym": "RZLV",
-          "name": "Rezolve AI",
-          "sector": "AI Software",
-          "pct": -19.68,
-          "contribution": -6.56,
-          "price": 2.49,
-          "day_change_pct": -4.23,
-          "baseline": 3.1,
-          "split_adjusted": false,
-          "spark": {
-            "points": "2.0,2.0 9.5,2.5 17.0,8.8 24.5,10.7 32.0,10.7 39.5,14.1 47.0,14.6 54.5,15.1 62.0,18.0",
-            "up": false
-          }
-        }
-      ]
-    },
-    {
       "name": "Andrew Fahey",
-      "rank": 9,
-      "avg": -12.45,
-      "points_behind": 14.31,
-      "movement": -2,
+      "rank": 8,
+      "avg": -9.47,
+      "points_behind": 14.37,
+      "movement": 1,
       "is_new": false,
       "pending": false,
       "champion": "Reigning league champion",
@@ -472,14 +415,14 @@
           "sym": "MU",
           "name": "Micron Technology",
           "sector": "Semiconductors",
-          "pct": -13.41,
-          "contribution": -4.47,
-          "price": 937.0,
-          "day_change_pct": -4.32,
+          "pct": -10.0,
+          "contribution": -3.33,
+          "price": 973.82,
+          "day_change_pct": 3.93,
           "baseline": 1082.08,
           "split_adjusted": false,
           "spark": {
-            "points": "2.0,2.0 9.5,7.5 17.0,13.7 24.5,12.7 32.0,17.8 39.5,16.7 47.0,12.0 54.5,13.3 62.0,18.0",
+            "points": "2.0,2.0 8.7,7.5 15.3,13.7 22.0,12.7 28.7,17.8 35.3,16.7 42.0,12.0 48.7,13.3 55.3,18.0 62.0,13.9",
             "up": false
           }
         },
@@ -487,14 +430,14 @@
           "sym": "STX",
           "name": "Seagate Technology",
           "sector": "Data Storage",
-          "pct": -4.22,
-          "contribution": -1.41,
-          "price": 860.66,
-          "day_change_pct": -5.46,
+          "pct": -2.22,
+          "contribution": -0.74,
+          "price": 878.575,
+          "day_change_pct": 2.08,
           "baseline": 898.55,
           "split_adjusted": false,
           "spark": {
-            "points": "2.0,4.8 9.5,2.0 17.0,18.0 24.5,9.9 32.0,16.7 39.5,11.3 47.0,6.2 54.5,2.8 62.0,11.2",
+            "points": "2.0,4.8 8.7,2.0 15.3,18.0 22.0,9.9 28.7,16.7 35.3,11.3 42.0,6.2 48.7,2.8 55.3,11.2 62.0,8.2",
             "up": false
           }
         },
@@ -502,14 +445,71 @@
           "sym": "SNDK",
           "name": "Sandisk",
           "sector": "Data Storage",
-          "pct": -19.72,
-          "contribution": -6.57,
-          "price": 1673.97,
-          "day_change_pct": -12.63,
+          "pct": -16.18,
+          "contribution": -5.39,
+          "price": 1747.755,
+          "day_change_pct": 4.41,
           "baseline": 2085.1699,
           "split_adjusted": false,
           "spark": {
-            "points": "2.0,2.0 9.5,3.8 17.0,13.6 24.5,13.7 32.0,18.0 39.5,14.3 47.0,9.8 54.5,7.8 62.0,16.1",
+            "points": "2.0,2.0 8.7,3.8 15.3,13.6 22.0,13.7 28.7,18.0 35.3,14.3 42.0,9.8 48.7,7.8 55.3,16.1 62.0,13.5",
+            "up": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "Luke Clark",
+      "rank": 9,
+      "avg": -12.49,
+      "points_behind": 17.39,
+      "movement": -1,
+      "is_new": false,
+      "pending": false,
+      "champion": null,
+      "picks": [
+        {
+          "sym": "MARA",
+          "name": "MARA Holdings",
+          "sector": "Bitcoin Mining",
+          "pct": -11.69,
+          "contribution": -3.9,
+          "price": 12.205,
+          "day_change_pct": 0.12,
+          "baseline": 13.82,
+          "split_adjusted": false,
+          "spark": {
+            "points": "2.0,2.0 8.7,6.0 15.3,14.6 22.0,9.7 28.7,17.7 35.3,18.0 42.0,7.3 48.7,12.8 55.3,16.5 62.0,16.4",
+            "up": false
+          }
+        },
+        {
+          "sym": "IOVA",
+          "name": "Iovance Biotherapeutics",
+          "sector": "Biotech",
+          "pct": -5.29,
+          "contribution": -1.76,
+          "price": 3.94,
+          "day_change_pct": -2.48,
+          "baseline": 4.16,
+          "split_adjusted": false,
+          "spark": {
+            "points": "2.0,9.8 8.7,16.9 15.3,4.2 22.0,8.7 28.7,2.7 35.3,5.3 42.0,2.0 48.7,7.2 55.3,14.3 62.0,18.0",
+            "up": false
+          }
+        },
+        {
+          "sym": "RZLV",
+          "name": "Rezolve AI",
+          "sector": "AI Software",
+          "pct": -20.48,
+          "contribution": -6.83,
+          "price": 2.465,
+          "day_change_pct": -1.0,
+          "baseline": 3.1,
+          "split_adjusted": false,
+          "spark": {
+            "points": "2.0,2.0 8.7,2.5 15.3,8.6 22.0,10.3 28.7,10.3 35.3,13.6 42.0,14.1 48.7,14.6 55.3,17.4 62.0,18.0",
             "up": false
           }
         }
@@ -518,8 +518,8 @@
     {
       "name": "Keegan Ball",
       "rank": 10,
-      "avg": -20.03,
-      "points_behind": 21.89,
+      "avg": -19.07,
+      "points_behind": 23.97,
       "movement": 0,
       "is_new": false,
       "pending": false,
@@ -529,14 +529,14 @@
           "sym": "NNE",
           "name": "Nano Nuclear Energy",
           "sector": "Nuclear Energy",
-          "pct": -14.8,
-          "contribution": -4.93,
-          "price": 18.02,
-          "day_change_pct": -4.45,
+          "pct": -13.47,
+          "contribution": -4.49,
+          "price": 18.3001,
+          "day_change_pct": 1.55,
           "baseline": 21.15,
           "split_adjusted": false,
           "spark": {
-            "points": "2.0,2.0 9.5,4.0 17.0,7.7 24.5,6.9 32.0,13.6 39.5,13.2 47.0,11.5 54.5,13.7 62.0,18.0",
+            "points": "2.0,2.0 8.7,4.0 15.3,7.7 22.0,6.9 28.7,13.6 35.3,13.2 42.0,11.5 48.7,13.7 55.3,18.0 62.0,16.6",
             "up": false
           }
         },
@@ -544,14 +544,14 @@
           "sym": "OKLO",
           "name": "Oklo",
           "sector": "Nuclear Energy",
-          "pct": -14.58,
-          "contribution": -4.86,
-          "price": 45.81,
-          "day_change_pct": -6.22,
+          "pct": -14.36,
+          "contribution": -4.79,
+          "price": 45.93,
+          "day_change_pct": 0.26,
           "baseline": 53.63,
           "split_adjusted": false,
           "spark": {
-            "points": "2.0,2.0 9.5,4.4 17.0,4.6 24.5,5.7 32.0,13.7 39.5,15.0 47.0,10.9 54.5,11.8 62.0,18.0",
+            "points": "2.0,2.0 8.7,4.4 15.3,4.6 22.0,5.7 28.7,13.7 35.3,15.0 42.0,10.9 48.7,11.8 55.3,18.0 62.0,17.8",
             "up": false
           }
         },
@@ -559,14 +559,14 @@
           "sym": "LUNR",
           "name": "Intuitive Machines",
           "sector": "Space & Aerospace",
-          "pct": -30.71,
-          "contribution": -10.24,
-          "price": 15.15,
-          "day_change_pct": -6.13,
+          "pct": -29.38,
+          "contribution": -9.79,
+          "price": 15.44,
+          "day_change_pct": 1.91,
           "baseline": 21.865,
           "split_adjusted": false,
           "spark": {
-            "points": "2.0,2.0 9.5,6.0 17.0,7.4 24.5,9.1 32.0,11.6 39.5,13.5 47.0,13.8 54.5,15.6 62.0,18.0",
+            "points": "2.0,2.0 8.7,6.0 15.3,7.4 22.0,9.1 28.7,11.6 35.3,13.5 42.0,13.8 48.7,15.6 55.3,18.0 62.0,17.3",
             "up": false
           }
         }
