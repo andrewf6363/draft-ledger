@@ -863,6 +863,33 @@
         "Andrew Fahey": 9,
         "Karlis Draulis": 10
       }
+    },
+    {
+      "date": "2026-08-14",
+      "avgs": {
+        "Brad Bone": 24.03,
+        "Luke Clark": 2.5,
+        "Kyle Williams": -0.76,
+        "John Pappas": -3.11,
+        "Shawn Henderson": -3.69,
+        "Ryan Sheekley": -4.0,
+        "Andrew Fahey": -8.89,
+        "Keegan Ball": -9.49,
+        "John Atkins": -12.46,
+        "Karlis Draulis": -15.46
+      },
+      "ranks": {
+        "Brad Bone": 1,
+        "Luke Clark": 2,
+        "Kyle Williams": 3,
+        "John Pappas": 4,
+        "Shawn Henderson": 5,
+        "Ryan Sheekley": 6,
+        "Andrew Fahey": 7,
+        "Keegan Ball": 8,
+        "John Atkins": 9,
+        "Karlis Draulis": 10
+      }
     }
   ]
 }
