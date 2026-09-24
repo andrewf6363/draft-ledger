@@ -1,14 +1,14 @@
 {
-  "updated_utc": "2026-09-24T20:04:14Z",
+  "updated_utc": "2026-09-24T23:12:15Z",
   "tickers": {
     "GEV": {
       "latest": {
-        "price": 955.5,
-        "asof_utc": "2026-09-24T20:03:51Z",
+        "price": 955.04,
+        "asof_utc": "2026-09-24T23:11:46Z",
         "source": "yfinance"
       },
       "prev_close": 951.82,
-      "day_change_pct": 0.39,
+      "day_change_pct": 0.34,
       "day_high": null,
       "day_low": null,
       "week52_high": null,
@@ -193,18 +193,18 @@
         },
         {
           "d": "2026-09-24",
-          "c": 955.5
+          "c": 955.04
         }
       ]
     },
     "VRT": {
       "latest": {
-        "price": 245.38,
-        "asof_utc": "2026-09-24T20:03:52Z",
+        "price": 245.3,
+        "asof_utc": "2026-09-24T23:11:47Z",
         "source": "yfinance"
       },
       "prev_close": 248.78,
-      "day_change_pct": -1.37,
+      "day_change_pct": -1.4,
       "day_high": null,
       "day_low": null,
       "week52_high": null,
@@ -389,14 +389,14 @@
         },
         {
           "d": "2026-09-24",
-          "c": 245.38
+          "c": 245.3
         }
       ]
     },
     "CEG": {
       "latest": {
         "price": 261.62,
-        "asof_utc": "2026-09-24T20:03:53Z",
+        "asof_utc": "2026-09-24T23:11:48Z",
         "source": "yfinance"
       },
       "prev_close": 263.88,
@@ -592,7 +592,7 @@
     "RKLB": {
       "latest": {
         "price": 73.61,
-        "asof_utc": "2026-09-24T20:03:54Z",
+        "asof_utc": "2026-09-24T23:11:49Z",
         "source": "yfinance"
       },
       "prev_close": 70.31,
@@ -787,12 +787,12 @@
     },
     "OKLO": {
       "latest": {
-        "price": 38.27,
-        "asof_utc": "2026-09-24T20:03:55Z",
+        "price": 38.29,
+        "asof_utc": "2026-09-24T23:11:50Z",
         "source": "yfinance"
       },
       "prev_close": 38.82,
-      "day_change_pct": -1.42,
+      "day_change_pct": -1.37,
       "day_high": null,
       "day_low": null,
       "week52_high": null,
@@ -977,14 +977,14 @@
         },
         {
           "d": "2026-09-24",
-          "c": 38.27
+          "c": 38.29
         }
       ]
     },
     "HOOD": {
       "latest": {
         "price": 120.82,
-        "asof_utc": "2026-09-24T20:03:56Z",
+        "asof_utc": "2026-09-24T23:11:52Z",
         "source": "yfinance"
       },
       "prev_close": 122.7,
@@ -1180,7 +1180,7 @@
     "NNE": {
       "latest": {
         "price": 17.02,
-        "asof_utc": "2026-09-24T20:03:56Z",
+        "asof_utc": "2026-09-24T23:11:53Z",
         "source": "yfinance"
       },
       "prev_close": 17.01,
@@ -1376,7 +1376,7 @@
     "LUNR": {
       "latest": {
         "price": 15.7,
-        "asof_utc": "2026-09-24T20:03:58Z",
+        "asof_utc": "2026-09-24T23:11:54Z",
         "source": "yfinance"
       },
       "prev_close": 15.24,
@@ -1572,7 +1572,7 @@
     "MU": {
       "latest": {
         "price": 1080.53,
-        "asof_utc": "2026-09-24T20:03:59Z",
+        "asof_utc": "2026-09-24T23:11:55Z",
         "source": "yfinance"
       },
       "prev_close": 1071.88,
@@ -1768,7 +1768,7 @@
     "STX": {
       "latest": {
         "price": 905.92,
-        "asof_utc": "2026-09-24T20:03:59Z",
+        "asof_utc": "2026-09-24T23:11:56Z",
         "source": "yfinance"
       },
       "prev_close": 923.86,
@@ -1964,7 +1964,7 @@
     "SNDK": {
       "latest": {
         "price": 1753.62,
-        "asof_utc": "2026-09-24T20:04:00Z",
+        "asof_utc": "2026-09-24T23:11:57Z",
         "source": "yfinance"
       },
       "prev_close": 1816.5699,
@@ -2160,7 +2160,7 @@
     "AMD": {
       "latest": {
         "price": 629.26,
-        "asof_utc": "2026-09-24T20:04:01Z",
+        "asof_utc": "2026-09-24T23:11:59Z",
         "source": "yfinance"
       },
       "prev_close": 614.61,
@@ -2356,7 +2356,7 @@
     "AVGO": {
       "latest": {
         "price": 350.36,
-        "asof_utc": "2026-09-24T20:04:02Z",
+        "asof_utc": "2026-09-24T23:12:00Z",
         "source": "yfinance"
       },
       "prev_close": 354.99,
@@ -2552,7 +2552,7 @@
     "TSLA": {
       "latest": {
         "price": 377.94,
-        "asof_utc": "2026-09-24T20:04:03Z",
+        "asof_utc": "2026-09-24T23:12:01Z",
         "source": "yfinance"
       },
       "prev_close": 380.12,
@@ -2748,7 +2748,7 @@
     "MSTR": {
       "latest": {
         "price": 161.61,
-        "asof_utc": "2026-09-24T20:04:04Z",
+        "asof_utc": "2026-09-24T23:12:02Z",
         "source": "yfinance"
       },
       "prev_close": 162.2,
@@ -2944,7 +2944,7 @@
     "COIN": {
       "latest": {
         "price": 199.21,
-        "asof_utc": "2026-09-24T20:04:05Z",
+        "asof_utc": "2026-09-24T23:12:04Z",
         "source": "yfinance"
       },
       "prev_close": 198.13,
@@ -3140,7 +3140,7 @@
     "SPCX": {
       "latest": {
         "price": 148.03,
-        "asof_utc": "2026-09-24T20:04:06Z",
+        "asof_utc": "2026-09-24T23:12:05Z",
         "source": "yfinance"
       },
       "prev_close": 148.36,
@@ -3336,7 +3336,7 @@
     "EBAY": {
       "latest": {
         "price": 107.83,
-        "asof_utc": "2026-09-24T20:04:07Z",
+        "asof_utc": "2026-09-24T23:12:06Z",
         "source": "yfinance"
       },
       "prev_close": 109.09,
@@ -3532,7 +3532,7 @@
     "MSFT": {
       "latest": {
         "price": 497.93,
-        "asof_utc": "2026-09-24T20:04:08Z",
+        "asof_utc": "2026-09-24T23:12:07Z",
         "source": "yfinance"
       },
       "prev_close": 500.59,
@@ -3728,7 +3728,7 @@
     "ZS": {
       "latest": {
         "price": 214.64,
-        "asof_utc": "2026-09-24T20:04:09Z",
+        "asof_utc": "2026-09-24T23:12:08Z",
         "source": "yfinance"
       },
       "prev_close": 214.45,
@@ -3924,7 +3924,7 @@
     "CRWD": {
       "latest": {
         "price": 259.67,
-        "asof_utc": "2026-09-24T20:04:10Z",
+        "asof_utc": "2026-09-24T23:12:09Z",
         "source": "yfinance"
       },
       "prev_close": 262.49,
@@ -4119,12 +4119,12 @@
     },
     "ETN": {
       "latest": {
-        "price": 439.77,
-        "asof_utc": "2026-09-24T20:04:11Z",
+        "price": 440.0,
+        "asof_utc": "2026-09-24T23:12:11Z",
         "source": "yfinance"
       },
       "prev_close": 438.76,
-      "day_change_pct": 0.23,
+      "day_change_pct": 0.28,
       "day_high": null,
       "day_low": null,
       "week52_high": null,
@@ -4309,14 +4309,14 @@
         },
         {
           "d": "2026-09-24",
-          "c": 439.77
+          "c": 440.0
         }
       ]
     },
     "MARA": {
       "latest": {
         "price": 12.92,
-        "asof_utc": "2026-09-24T20:04:12Z",
+        "asof_utc": "2026-09-24T23:12:12Z",
         "source": "yfinance"
       },
       "prev_close": 13.35,
@@ -4512,7 +4512,7 @@
     "IOVA": {
       "latest": {
         "price": 10.8,
-        "asof_utc": "2026-09-24T20:04:13Z",
+        "asof_utc": "2026-09-24T23:12:13Z",
         "source": "yfinance"
       },
       "prev_close": 10.19,
@@ -4708,7 +4708,7 @@
     "RZLV": {
       "latest": {
         "price": 2.23,
-        "asof_utc": "2026-09-24T20:04:14Z",
+        "asof_utc": "2026-09-24T23:12:14Z",
         "source": "yfinance"
       },
       "prev_close": 2.28,
